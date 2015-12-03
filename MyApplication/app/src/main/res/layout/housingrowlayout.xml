@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="95dp"
+    android:padding="6dip"
+    >
+
+    <TextView
+        android:id="@+id/firstLine"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignWithParentIfMissing="true"
+        android:gravity="center_vertical"
+        android:text="Apt Name"
+        android:textSize="18sp"
+        android:textColor="#94969A"/>
+
+    <TextView
+        android:id="@+id/secondLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingTop="2dp"
+        android:singleLine="true"
+        android:text="Address"
+        android:textSize="16sp"
+        android:textColor="#3B3C43"
+        android:layout_below="@+id/firstLine" />
+
+    <TextView
+        android:id="@+id/thirdLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingBottom="10dp"
+        android:text="City, ST"
+        android:layout_alignParentStart="true"
+        android:textSize="16sp"
+        android:textColor="#3B3C43"
+        android:layout_below="@+id/secondLine"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="25dp"
+        android:paddingTop="2dp"
+        android:text="Distance"
+        android:textSize="16sp"
+        android:textColor="#3B3C43"
+        android:id="@+id/distance"
+        android:layout_alignTop="@+id/secondLine"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="25dp"
+        android:text="$1000+"
+        android:textSize="16sp"
+        android:textColor="#3B3C43"
+        android:id="@+id/cost"
+        android:layout_below="@+id/distance"
+        android:layout_alignStart="@+id/distance" />
+
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#94969A"
+        android:layout_below="@+id/thirdLine"
+        />
+
+
+
+</RelativeLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Annoucements" />
+        <item
+            android:id="@+id/nav_directory"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="BLP Directory" />
+        <item
+            android:id="@+id/nav_event"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="SYF Events" />
+        <item
+            android:id="@+id/nav_housing"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Housing Ratings" />
+    </group>
+
+
+
+</menu>
