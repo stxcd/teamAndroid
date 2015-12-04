@@ -1,4 +1,4 @@
-package com.syfblp.sas.blpappv2;
+package com.syfblp.sas.blpappv2.housing;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -6,10 +6,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.syfblp.sas.blpappv2.announcements.Announcement;
+import com.syfblp.sas.blpappv2.R;
+
 import java.util.ArrayList;
 
 public class HomeRecycleAdapter extends RecyclerView.Adapter<HomeRecycleAdapter.ViewHolder> {
-    private ArrayList<Newsfeed> mDataset;
+    private ArrayList<Announcement> mDataset;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -26,19 +29,19 @@ public class HomeRecycleAdapter extends RecyclerView.Adapter<HomeRecycleAdapter.
         }
     }
 
-    public void add(int position, Newsfeed item) {
+    public void add(int position, Announcement item) {
         mDataset.add(position, item);
         notifyItemInserted(position);
     }
 
-    public void remove(Newsfeed item) {
+    public void remove(Announcement item) {
         int position = mDataset.indexOf(item);
         mDataset.remove(position);
         notifyItemRemoved(position);
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public HomeRecycleAdapter(ArrayList<Newsfeed> myDataset) {
+    public HomeRecycleAdapter(ArrayList<Announcement> myDataset) {
         mDataset = myDataset;
     }
 
@@ -58,7 +61,7 @@ public class HomeRecycleAdapter extends RecyclerView.Adapter<HomeRecycleAdapter.
     public void onBindViewHolder(ViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-       Newsfeed name = mDataset.get(position);
+       Announcement name = mDataset.get(position);
 
         holder.txtHeader.setText(name.getDescription());
 

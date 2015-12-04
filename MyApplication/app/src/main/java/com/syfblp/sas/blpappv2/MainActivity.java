@@ -13,6 +13,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.syfblp.sas.blpappv2.announcements.AnnouncementsFragment;
+import com.syfblp.sas.blpappv2.directory.DirectoryFragment;
+import com.syfblp.sas.blpappv2.events.EventFragment;
+import com.syfblp.sas.blpappv2.housing.HousingFragment;
+
 import static com.syfblp.sas.blpappv2.R.id.nav_home;
 
 public class MainActivity extends AppCompatActivity
@@ -37,7 +42,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         FragmentManager fragmentManager=getFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.content_frame,new MainFragment()).commit();
+        fragmentManager.beginTransaction().replace(R.id.content_frame,new AnnouncementsFragment()).commit();
         setTitle("Annoucements");
 
 
@@ -87,8 +92,8 @@ public class MainActivity extends AppCompatActivity
 
         if (id == nav_home) {
             // makes the home fragment
-            MainFragment.newInstance();
-            fragmentManager.beginTransaction().replace(R.id.content_frame,new MainFragment()).commit();
+            AnnouncementsFragment.newInstance();
+            fragmentManager.beginTransaction().replace(R.id.content_frame,new AnnouncementsFragment()).commit();
         } else if (id == R.id.nav_directory) {
             DirectoryFragment.newInstance();
             fragmentManager.beginTransaction().replace(R.id.content_frame,new DirectoryFragment()).commit();

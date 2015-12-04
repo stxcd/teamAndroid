@@ -1,4 +1,4 @@
-package com.syfblp.sas.blpappv2;
+package com.syfblp.sas.blpappv2.housing;
 
 import android.app.Fragment;
 import android.content.Intent;
@@ -11,6 +11,9 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.syfblp.sas.blpappv2.R;
+import com.syfblp.sas.blpappv2.ServiceHandler;
 
 import org.json.JSONArray;
 import org.json.JSONException;

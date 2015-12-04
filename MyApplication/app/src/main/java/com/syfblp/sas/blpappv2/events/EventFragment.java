@@ -1,10 +1,12 @@
-package com.syfblp.sas.blpappv2;
+package com.syfblp.sas.blpappv2.events;
 
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.syfblp.sas.blpappv2.R;
 
 
 public class EventFragment extends Fragment {

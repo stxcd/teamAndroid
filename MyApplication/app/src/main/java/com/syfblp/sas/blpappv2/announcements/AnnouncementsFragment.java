@@ -1,4 +1,4 @@
-package com.syfblp.sas.blpappv2;
+package com.syfblp.sas.blpappv2.announcements;
 
 import android.app.Fragment;
 import android.os.AsyncTask;
@@ -10,6 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.syfblp.sas.blpappv2.R;
+import com.syfblp.sas.blpappv2.ServiceHandler;
+import com.syfblp.sas.blpappv2.housing.HomeRecycleAdapter;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -18,11 +22,11 @@ import java.util.ArrayList;
 
 
 
-public class MainFragment extends Fragment {
+public class AnnouncementsFragment extends Fragment {
     private RecyclerView recyclerView;
     private HomeRecycleAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    ArrayList<Newsfeed> input = new ArrayList<>() ;
+    ArrayList<Announcement> input = new ArrayList<>() ;
 
     //URL to get JSON Array
     private static String url = "https://uat.onlinecreditcenter6.com/cs/groups/cmswebsite/documents/websiteasset/newsfeed_android.json";
@@ -35,8 +39,8 @@ public class MainFragment extends Fragment {
 
     JSONArray newsArray = null;
 
-    public static MainFragment newInstance() {
-        MainFragment fragment= new MainFragment();
+    public static AnnouncementsFragment newInstance() {
+        AnnouncementsFragment fragment= new AnnouncementsFragment();
         return fragment;
     }
 
@@ -85,11 +89,11 @@ public class MainFragment extends Fragment {
                         String id = c.getString(ID);
                         String description = c.getString(DESCRIPTION);
                         String date = c.getString(DATE);
-                        Newsfeed newsfeed= new Newsfeed();
-                        newsfeed.setId(Integer.parseInt(id));
-                        newsfeed.setDescription(description);
-                        newsfeed.setTime(date);
-                        input.add(newsfeed);
+                        Announcement announcement = new Announcement();
+                        announcement.setId(Integer.parseInt(id));
+                        announcement.setDescription(description);
+                        announcement.setTime(date);
+                        input.add(announcement);
 
                     }
 

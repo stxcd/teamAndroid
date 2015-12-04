@@ -1,11 +1,9 @@
-package com.syfblp.sas.blpappv2;
-
-import java.util.List;
+package com.syfblp.sas.blpappv2.announcements;
 
 /**
  * Created by 212464350 on 11/24/2015.
  */
-public class Newsfeed {
+public class Announcement {
     int Id;
     String description;
     String time;
