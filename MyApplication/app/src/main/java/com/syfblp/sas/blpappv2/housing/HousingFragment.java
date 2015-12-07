@@ -29,16 +29,24 @@ public class HousingFragment extends Fragment {
     ArrayList<String> alllocation = new ArrayList<>();
 
 
-    private static final String JSON = "survey" ;
-    private static final String APARTMENT_NAME = "apartmentName" ;
+    private static final String JSON = "directory" ;
     private static final String ID = "id" ;
-    private static final String ADDRESS1 = "Address1" ;
-    private static final String ADDRESS2 = "Address2" ;
+    private static final String FIRSTNAME = "FirstName" ;
+    private static final String LASTNAME = "LastName" ;
+    private static final String TYPE = "Type" ;
+    private static final String APARTMENT_NAME = "apartmentName" ;
+    private static final String ADDRESS1 = "Address 1" ;
     private static final String CITY = "City" ;
     private static final String STATE = "State" ;
+    private static final String ZIPCODE = "zipCode" ;
+    private static final String BEDROOMS = "Bedrooms" ;
+    private static final String BATHROOMS = "Bathroom" ;
+    private static final String NUMPEOPLE = "NumPeople" ;
     private static final String DISTANCE = "Commute" ;
-    private static final String WORKLOCAL = "workLocation" ;
-    private static final String COST="Monthly";
+    private static final String PARKING = "Parking" ;
+    private static final String WORKLOCAL = "SYFLocation" ;
+    private static final String COST="Rent";
+
     JSONArray houseArray = null;
     ListView listView;
     ArrayAdapter<String> adapter;
@@ -52,13 +60,7 @@ public class HousingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup containter, Bundle savedInstanceState) {
         View rootview = inflater.inflate(R.layout.fragment_housing, containter, false);
         new JSONParse().execute();
-//        int i;
-//        final ArrayList<String> alllocation= new ArrayList<>();
-//            for (i = 0; i < input.size(); i++) {
-//                Housing housing = input.get(i);
-//                String lvnames = housing.getWorkLocation();
-//                alllocation.add(lvnames);
-//            }
+
 
         adapter = new ArrayAdapter<>(rootview.getContext(), android.R.layout.simple_list_item_1, alllocation);
         listView = (ListView) rootview.findViewById(R.id.listView);
@@ -86,11 +88,6 @@ public class HousingFragment extends Fragment {
 
     private class JSONParse extends AsyncTask<Void, Void, Void> {
 
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-
-        }
 
         @Override
         protected Void doInBackground(Void... arg0) {
@@ -111,23 +108,37 @@ public class HousingFragment extends Fragment {
                         JSONObject c = houseArray.getJSONObject(i);
                         // Storing  JSON item in a Variable
                         String id = c.getString(ID);
+                        String firsname=c.getString(FIRSTNAME);
+                        String lastname=c.getString(LASTNAME);
+                        String type= c.getString(TYPE);
                         String addressname = c.getString(APARTMENT_NAME);
                         String address1 = c.getString(ADDRESS1);
-                        String address2 = c.getString(ADDRESS2);
                         String city = c.getString(CITY);
                         String state = c.getString(STATE);
+                        String zipcode= c.getString(ZIPCODE);
+                        String bedroom= c.getString(BEDROOMS);
+                        String bathroom= c.getString(BATHROOMS);
+                        String numpeople=c.getString(NUMPEOPLE);
+                        String parking= c.getString(PARKING);
                         String distance = c.getString(DISTANCE);
                         String work = c.getString(WORKLOCAL);
                         String cost = c.getString(COST);
                         Housing housing = new Housing();
                         housing.setId(Integer.parseInt(id));
+                        housing.setFname(firsname);
+                        housing.setLname(lastname);
+                        housing.setType(type);
+                        housing.setZipCode(zipcode);
+                        housing.setBedroom(bedroom);
+                        housing.setBathroom(bathroom);
+                        housing.setNumpeople(numpeople);
                         housing.setApartmentName(addressname);
                         housing.setApartmentAddress1(address1);
-                        housing.setApartmentAddress2(address2);
                         housing.setApartmentCity(city);
                         housing.setApartmentState(state);
                         housing.setApartmentDistance(distance);
                         housing.setWorkLocation(work);
+                        housing.setParking(parking);
                         housing.setApartmentCost(cost);
                         input.add(housing);
                         System.out.println(housing.getApartmentAddress1());
@@ -163,7 +174,7 @@ public class HousingFragment extends Fragment {
 
     private boolean checkUnique(String lvnames, ArrayList<String> location) {
        boolean unique=true;
-            for (int i=0; 0<location.indexOf(lvnames);i++) {
+            for (int i=0; 0<location.indexOf(lvnames.trim());i++) {
                 if (location.get(i).equals(lvnames)) {
                     unique = false;
                     break;
@@ -171,7 +182,7 @@ public class HousingFragment extends Fragment {
             }
 
             for (int y=location.indexOf(lvnames)+1; y<location.size();y++){
-                if (location.get(y).equals(lvnames)){
+                if (location.get(y).equals(lvnames.trim())){
                     unique=false;
                     break;
                 }
