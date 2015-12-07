@@ -26,7 +26,7 @@
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar">
     </activity>
-        <activity android:name=".HousingActivity"
+        <activity android:name=".housing.HousingActivity"
                   android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>

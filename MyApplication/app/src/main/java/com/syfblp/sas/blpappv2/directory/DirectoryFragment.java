@@ -1,10 +1,13 @@
-package com.syfblp.sas.blpappv2;
+package com.syfblp.sas.blpappv2.directory;
 
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.syfblp.sas.blpappv2.R;
+
 
 /**
  * Created by 212464350 on 11/24/2015.

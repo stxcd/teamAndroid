@@ -1,4 +1,4 @@
-package com.syfblp.sas.blpappv2;
+package com.syfblp.sas.blpappv2.housing;
 
 import java.io.Serializable;
 

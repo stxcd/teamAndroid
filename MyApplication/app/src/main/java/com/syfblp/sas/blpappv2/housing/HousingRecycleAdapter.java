@@ -1,10 +1,12 @@
-package com.syfblp.sas.blpappv2;
+package com.syfblp.sas.blpappv2.housing;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.syfblp.sas.blpappv2.R;
 
 import java.util.ArrayList;
 

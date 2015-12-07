@@ -1,4 +1,4 @@
-package com.syfblp.sas.blpappv2;
+package com.syfblp.sas.blpappv2.housing;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
+
+import com.syfblp.sas.blpappv2.R;
 
 import java.util.ArrayList;
 
