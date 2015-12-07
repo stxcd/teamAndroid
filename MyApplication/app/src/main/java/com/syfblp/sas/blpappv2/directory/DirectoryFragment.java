@@ -14,6 +14,17 @@ import com.syfblp.sas.blpappv2.R;
  */
 public class DirectoryFragment extends Fragment {
 
+    private PersonAdapter adapter;
+
+    public static final String KEY_FIRSTNAME = "firstName";
+    public static final String KEY_LASTNAME = "lastName";
+    public static final String KEY_LOCATION = "location";
+    public static final String KEY_FUNCTION = "function";
+    public static final String KEY_ROLE = "role";
+    public static final String KEY_AL = "al";
+    public static final String KEY_PHONE = "phone";
+    public static final String KEY_EMAIL = "email";
+    
     public static DirectoryFragment newInstance(){
         DirectoryFragment fragment=new DirectoryFragment();
         return fragment;
