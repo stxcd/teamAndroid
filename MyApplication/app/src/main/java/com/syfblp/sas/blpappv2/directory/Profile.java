@@ -3,70 +3,64 @@ package com.syfblp.sas.blpappv2.directory;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 
 import com.syfblp.sas.blpappv2.R;
 
-import static com.syfblp.sas.blpappv2.directory.DirectoryFragment.KEY_AL;
-import static com.syfblp.sas.blpappv2.directory.DirectoryFragment.KEY_EMAIL;
-import static com.syfblp.sas.blpappv2.directory.DirectoryFragment.KEY_FIRSTNAME;
-import static com.syfblp.sas.blpappv2.directory.DirectoryFragment.KEY_FUNCTION;
-import static com.syfblp.sas.blpappv2.directory.DirectoryFragment.KEY_LASTNAME;
-import static com.syfblp.sas.blpappv2.directory.DirectoryFragment.KEY_LOCATION;
-import static com.syfblp.sas.blpappv2.directory.DirectoryFragment.KEY_PHONE;
-import static com.syfblp.sas.blpappv2.directory.DirectoryFragment.KEY_ROLE;
+import java.util.ArrayList;
+
 
 public class Profile extends AppCompatActivity {
+    ArrayList<Person> tobedispayedList = new ArrayList<>();
+    ArrayList<Person> input = new ArrayList<>();
+    String nameToDisplay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_profile);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setContentView(R.layout.activity_profile);
 
-        String firstName = "";
-        String lastName = "";
-        String location = "";
-        String function = "";
-        String role = "";
-        String al = "";
-        String phone = "";
-        String email = "";
 
-        Intent intent = getIntent();
-        if(null != intent) {
-            firstName = intent.getStringExtra(KEY_FIRSTNAME);
-            lastName = intent.getStringExtra(KEY_LASTNAME);
-            location = intent.getStringExtra(KEY_LOCATION);
-            function = intent.getStringExtra(KEY_FUNCTION);
-            role = intent.getStringExtra(KEY_ROLE);
-            al = intent.getStringExtra(KEY_AL);
-            phone = intent.getStringExtra(KEY_PHONE);
-            email = intent.getStringExtra(KEY_EMAIL);
-        }
+        Intent incomingIntent = this.getIntent();
+        nameToDisplay = (String) incomingIntent.getStringExtra("snails");
+        input = (ArrayList<Person>) incomingIntent.getSerializableExtra("json");
 
+        Person person = getPeople(input);
         TextView firstLastNameTxt = (TextView) findViewById(R.id.txtFirstLastName);
-        firstLastNameTxt.setText(firstName + " " + lastName);
+        firstLastNameTxt.setText(person.getFirstName() + " " + person.getLastName());
 
         TextView FunctionLocationTxt = (TextView) findViewById(R.id.txtFunctionLocation);
-        FunctionLocationTxt.setText(function + "  |  " + location);
+        FunctionLocationTxt.setText(person.getFunction() + "  |  " + person.getLocation());
 
         TextView roleTxt = (TextView) findViewById(R.id.txtRole);
-        roleTxt.setText(role);
+        roleTxt.setText(person.getRole());
 
         TextView alTxt = (TextView) findViewById(R.id.txtAL);
-        alTxt.setText(al);
+        alTxt.setText(person.getAl());
 
         TextView phoneTxt = (TextView) findViewById(R.id.txtPhone);
-        phoneTxt.setText(phone);
+        phoneTxt.setText(person.getPhone());
 
         TextView emailTxt = (TextView) findViewById(R.id.txtEmail);
-        emailTxt.setText(email);
+        emailTxt.setText(person.getEmail());
+
+        TextView uniTxt= (TextView) findViewById(R.id.unitxt);
+        uniTxt.setText(person.getUniversity());
 
     }
 
-
-
+    private Person getPeople(ArrayList<Person> input) {
+        Person toBeReturned= null;
+        for (int i = 0; i < input.size(); i++) {
+            Person check = (Person) input.get(i);
+            String check1 = check.getFirstName() + " " + check.getLastName() + " " + check.getLocation();
+            if (check1.equals(nameToDisplay)) {
+                toBeReturned=check;
+            }
+        }
+        return toBeReturned;
+    }
 }
+
+
+

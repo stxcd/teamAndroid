@@ -11,7 +11,7 @@ import com.syfblp.sas.blpappv2.R;
 import java.util.ArrayList;
 
 public class HousingRecycleAdapter extends RecyclerView.Adapter<HousingRecycleAdapter.ViewHolder> {
-    private ArrayList<Housing> mDataset;
+    private ArrayList<Housing_> mDataset;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
@@ -36,7 +36,7 @@ public class HousingRecycleAdapter extends RecyclerView.Adapter<HousingRecycleAd
         }
     }
 
-    public void add(int position, Housing item) {
+    public void add(int position, Housing_ item) {
         mDataset.add(position, item);
         notifyItemInserted(position);
     }
@@ -48,7 +48,7 @@ public class HousingRecycleAdapter extends RecyclerView.Adapter<HousingRecycleAd
     }
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public HousingRecycleAdapter(ArrayList<Housing> myDataset) {
+    public HousingRecycleAdapter(ArrayList<Housing_> myDataset) {
         mDataset = myDataset;
     }
 
@@ -68,7 +68,7 @@ public class HousingRecycleAdapter extends RecyclerView.Adapter<HousingRecycleAd
     public void onBindViewHolder(ViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        final Housing name = mDataset.get(position);
+        final Housing_ name = mDataset.get(position);
         //holder.txtFirstLine.setText(mDataset.get(position));
        /* holder.txtFirstLine.setOnClickListener(new View.OnClickListener() {
 
@@ -85,12 +85,12 @@ public class HousingRecycleAdapter extends RecyclerView.Adapter<HousingRecycleAd
             }
         else{
             holder.txtApartmentBuilding.setText(name.getApartmentName());}
-        if (name.getApartmentAddress2().equals("Null")){
-            holder.txtSecondLine.setText(name.getApartmentAddress1());}
-                else {holder.txtSecondLine.setText(name.getApartmentAddress1()+ " "+ name.getApartmentAddress2());}
-        holder.txtDistance.setText(name.getApartmentDistance());
-        holder.txtCityState.setText(name.getApartmentCity() + " ,"+ name.apartmentState);
-        holder.txtCost.setText("Monthly: "+name.getApartmentCost());
+
+            holder.txtSecondLine.setText(name.getAddress());
+
+        holder.txtDistance.setText(name.getCommute());
+        holder.txtCityState.setText(name.getCity() + " ,"+ name.getState());
+        holder.txtCost.setText("Monthly: "+name.getRent());
 
 
     }
