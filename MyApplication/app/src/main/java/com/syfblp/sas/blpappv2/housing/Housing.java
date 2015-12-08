@@ -10,7 +10,7 @@ public class Housing {
 
     @SerializedName("housing")
     @Expose
-    private ArrayList<Housing_> housing = new ArrayList<Housing_>();
+    private ArrayList<Housing_> housing = new ArrayList<>();
 
     /**
      *

@@ -8,7 +8,7 @@ public class Housing_ {
 
     @SerializedName("id")
     @Expose
-    private Integer id;
+    private String id;
     @SerializedName("type")
     @Expose
     private String type;
@@ -26,7 +26,7 @@ public class Housing_ {
     private String State;
     @SerializedName("rent")
     @Expose
-    private Integer rent;
+    private String rent;
     @SerializedName("parking")
     @Expose
     private String parking;
@@ -35,7 +35,7 @@ public class Housing_ {
     private String commute;
     @SerializedName("rating")
     @Expose
-    private Double rating;
+    private String rating;
     @SerializedName("syfLocation")
     @Expose
     private String syfLocation;
@@ -44,14 +44,14 @@ public class Housing_ {
     private String contact;
     @SerializedName("numReviews")
     @Expose
-    private Integer numReviews;
+    private String numReviews;
 
     /**
      *
      * @return
      * The id
      */
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
@@ -60,7 +60,7 @@ public class Housing_ {
      * @param id
      * The id
      */
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -159,7 +159,7 @@ public class Housing_ {
      * @return
      * The rent
      */
-    public Integer getRent() {
+    public String getRent() {
         return rent;
     }
 
@@ -168,7 +168,7 @@ public class Housing_ {
      * @param rent
      * The rent
      */
-    public void setRent(Integer rent) {
+    public void setRent(String rent) {
         this.rent = rent;
     }
 
@@ -213,7 +213,7 @@ public class Housing_ {
      * @return
      * The rating
      */
-    public Double getRating() {
+    public String getRating() {
         return rating;
     }
 
@@ -222,7 +222,7 @@ public class Housing_ {
      * @param rating
      * The rating
      */
-    public void setRating(Double rating) {
+    public void setRating(String rating) {
         this.rating = rating;
     }
 
@@ -267,7 +267,7 @@ public class Housing_ {
      * @return
      * The numReviews
      */
-    public Integer getNumReviews() {
+    public String getNumReviews() {
         return numReviews;
     }
 
@@ -276,7 +276,7 @@ public class Housing_ {
      * @param numReviews
      * The numReviews
      */
-    public void setNumReviews(Integer numReviews) {
+    public void setNumReviews(String numReviews) {
         this.numReviews = numReviews;
     }
 
