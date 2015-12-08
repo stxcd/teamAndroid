@@ -6,7 +6,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
 public class SplashPage extends AppCompatActivity {
-    private static int SPLASH_TIME_OUT = 3500;
+    private static int SPLASH_TIME_OUT = 7000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
