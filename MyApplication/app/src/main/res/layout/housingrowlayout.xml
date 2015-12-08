@@ -72,6 +72,12 @@
         android:layout_below="@+id/thirdLine"
         />
 
+    <RatingBar style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ratingBar"
+        android:layout_above="@+id/distance"
+        android:layout_alignEnd="@+id/firstLine" />
 
 
 </RelativeLayout>
