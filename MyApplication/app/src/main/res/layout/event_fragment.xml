@@ -10,21 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical"
-        android:layout_alignParentStart="true"
-         />
-
-    <!--<TextView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="@string/add_event"-->
-        <!--android:id="@+id/textView"-->
-        <!--android:layout_alignParentStart="true"-->
-        <!--android:layout_alignParentTop="true"-->
-        <!--android:layout_alignParentEnd="true"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:textColor="#6ebf4a"-->
-        <!--android:textStyle="bold|italic"-->
-        <!--android:textAlignment="center"-->
-        <!--android:singleLine="false" />-->
+        android:layout_alignParentStart="true"/>
 
 </RelativeLayout>
