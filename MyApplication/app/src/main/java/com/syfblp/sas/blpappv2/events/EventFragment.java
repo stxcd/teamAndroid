@@ -81,7 +81,7 @@ public class EventFragment extends Fragment {
 
             Log.d("Response: ", "> " + jsonStr);
 
-            mAdapter = new EventAdapter(input);
+            mAdapter = new EventAdapter(input, getActivity());
             return null;
 //            if (jsonStr != null) {
 //                try {
@@ -116,10 +116,9 @@ public class EventFragment extends Fragment {
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
 
-            mAdapter = new EventAdapter(input);
+            mAdapter = new EventAdapter(input,  getActivity());
 
             erecyclerView.setAdapter(mAdapter);
-
         }
 
     }
