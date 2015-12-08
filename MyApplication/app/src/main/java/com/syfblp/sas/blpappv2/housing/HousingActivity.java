@@ -15,8 +15,8 @@ public class HousingActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private HousingRecycleAdapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    ArrayList<Housing> tobedispayedList= new ArrayList<>();
-    ArrayList<Housing> input= new ArrayList<>();
+    ArrayList<Housing_> tobedispayedList= new ArrayList<>();
+    ArrayList<Housing_> input= new ArrayList<>();
 
 
     @Override
@@ -26,7 +26,7 @@ public class HousingActivity extends AppCompatActivity {
 
         Intent incomingIntent = this.getIntent();
         String nameToDisplay = (String)incomingIntent.getStringExtra("snails");
-        input=(ArrayList<Housing>)incomingIntent.getSerializableExtra("json");
+        input=(ArrayList<Housing_>)incomingIntent.getSerializableExtra("json");
         TextView tV = (TextView)findViewById(R.id.apartmentName);
         tV.setText(nameToDisplay);
 
@@ -39,8 +39,8 @@ public class HousingActivity extends AppCompatActivity {
 
 
         for(int i = 0;i<input.size();i++){
-            Housing check= (Housing) input.get(i);
-            if(check.getWorkLocation().equals(nameToDisplay)){
+            Housing_ check= (Housing_) input.get(i);
+            if(check.getSyfLocation().equals(nameToDisplay)){
                 tobedispayedList.add(check);
 
             }
