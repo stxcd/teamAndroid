@@ -11,74 +11,56 @@ import java.util.ArrayList;
 
 
 public class Profile extends AppCompatActivity {
-    ArrayList<Person> tobedispayedList= new ArrayList<>();
-    ArrayList<Person> input= new ArrayList<>();
+    ArrayList<Person> tobedispayedList = new ArrayList<>();
+    ArrayList<Person> input = new ArrayList<>();
+    String nameToDisplay;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_profile);
+        setContentView(R.layout.activity_profile);
+
+
         Intent incomingIntent = this.getIntent();
-        input=(ArrayList<Person>)incomingIntent.getSerializableExtra("json");
-        String nameToDisplay = (String)incomingIntent.getStringExtra("lookingfor");
+        nameToDisplay = (String) incomingIntent.getStringExtra("snails");
+        input = (ArrayList<Person>) incomingIntent.getSerializableExtra("json");
 
-        String firstName = "";
-        String lastName = "";
-        String location = "";
-        String function = "";
-        String role = "";
-        String al = "";
-        String phone = "";
-        String email = "";
-        String university="";
-
-        Person person= findPerson(nameToDisplay,input);
-
-            firstName = person.getFirstName();
-            lastName = person.getLastName();
-            location = person.getLocation();
-            function = person.getFunction();
-            role = person.getRole();
-            al = person.getAl();
-            phone = person.getPhone();
-            email = person.getEmail();
-            university=person.getUniversity();
-
+        Person person = getPeople(input);
         TextView firstLastNameTxt = (TextView) findViewById(R.id.txtFirstLastName);
-        firstLastNameTxt.setText(firstName + " " + lastName);
+        firstLastNameTxt.setText(person.getFirstName() + " " + person.getLastName());
 
         TextView FunctionLocationTxt = (TextView) findViewById(R.id.txtFunctionLocation);
-        FunctionLocationTxt.setText(function + "  |  " + location);
+        FunctionLocationTxt.setText(person.getFunction() + "  |  " + person.getLocation());
 
         TextView roleTxt = (TextView) findViewById(R.id.txtRole);
-        roleTxt.setText(role);
+        roleTxt.setText(person.getRole());
 
         TextView alTxt = (TextView) findViewById(R.id.txtAL);
-        alTxt.setText(al);
-
-        TextView uniTxt= (TextView) findViewById(R.id.txtuniversity);
-        uniTxt.setText(university);
+        alTxt.setText(person.getAl());
 
         TextView phoneTxt = (TextView) findViewById(R.id.txtPhone);
-        phoneTxt.setText(phone);
+        phoneTxt.setText(person.getPhone());
 
         TextView emailTxt = (TextView) findViewById(R.id.txtEmail);
-        emailTxt.setText(email);
+        emailTxt.setText(person.getEmail());
+
+        TextView uniTxt= (TextView) findViewById(R.id.unitxt);
+        uniTxt.setText(person.getUniversity());
 
     }
 
-    private Person findPerson(String nameToDisplay, ArrayList<Person> input) {
-        Person tobeDisplayed = null;
-        for (int i= 0; i<input.size();i++){
-            Person person=input.get(i);
-            String test= person.getFirstName()+" "+person.getLastName()+" "+person.getLocation();
-            if (test.equals(nameToDisplay)){
-                tobeDisplayed=person;
+    private Person getPeople(ArrayList<Person> input) {
+        Person toBeReturned= null;
+        for (int i = 0; i < input.size(); i++) {
+            Person check = (Person) input.get(i);
+            String check1 = check.getFirstName() + " " + check.getLastName() + " " + check.getLocation();
+            if (check1.equals(nameToDisplay)) {
+                toBeReturned=check;
             }
-
         }
-        return tobeDisplayed;
-
+        return toBeReturned;
     }
-
-
 }
+
+
+

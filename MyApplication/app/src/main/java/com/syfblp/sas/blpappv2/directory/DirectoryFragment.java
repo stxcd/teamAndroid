@@ -21,66 +21,73 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-
-
+/**
+ * Created by 212464350 on 11/24/2015.
+ */
 public class DirectoryFragment extends Fragment {
-
+    ArrayList<Person> input = new ArrayList<>();
+    ArrayList<String> peopleArray = new ArrayList<>();
+    private static final String JSON = "directory" ;
+    private static final String FIRST_NAME = "firstName" ;
+    private static final String ID = "id" ;
+    private static final String LAST_NAME = "lastName" ;
+    private static final String PHONE = "phone" ;
+    private static final String FUNCTION = "function" ;
+    private static final String EMAIL = "email" ;
+    private static final String ROTATION = "role" ;
+    private static final String LOCAL = "location" ;
+    private static final String ASSILEAD = "al" ;
+    private static final String UNIVERSITY="university";
     JSONArray personArray = null;
     ListView listView;
     ArrayAdapter<String> adapter;
-    ArrayList<Person> input = new ArrayList<>();
-    ArrayList<String> allperson = new ArrayList<>();
     private static String url = "https://uat.onlinecreditcenter6.com/cs/groups/cmswebsite/documents/websiteasset/directory_android.json" ;
-    private static final String JSON = "directory" ;
-    private static final String ID = "id" ;
-    private static final String FIRSTNAME = "firstName" ;
-    private static final String LASTNAME = "lastName" ;
-    private static final String LOCATION = "location" ;
-    private static final String FUNCTION = "function" ;
-    private static final String UNIVERSITY = "university" ;
-    private static final String EMAIL = "email" ;
-    private static final String PHONE = "phone" ;
-    private static final String ROLE = "role" ;
-    private static final String AL = "al" ;
 
 
-    public static DirectoryFragment newInstance(){
-        DirectoryFragment fragment=new DirectoryFragment();
-
+    public static DirectoryFragment newInstance() {
+        DirectoryFragment fragment = new DirectoryFragment();
         return fragment;
     }
 
-    public View onCreateView(LayoutInflater inflater,ViewGroup containter,Bundle savedInstanceState) {
-        View rootview = inflater.inflate(R.layout.content_blpdirectory, containter, false);
-
+    public View onCreateView(LayoutInflater inflater, ViewGroup containter, Bundle savedInstanceState) {
+        final View rootview = inflater.inflate(R.layout.content_blpdirectory, containter, false);
         new JSONParse().execute();
-        adapter = new ArrayAdapter<>(rootview.getContext(), android.R.layout.simple_list_item_1, allperson);
+
+        adapter = new ArrayAdapter<>(rootview.getContext(), android.R.layout.simple_list_item_1, peopleArray);
         listView = (ListView) rootview.findViewById(R.id.BLPDirectorylistView);
+
+
 
         android.widget.AdapterView.OnItemClickListener mMessageClickedHandler = new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView parent, View v, int position, long id) {
+
+
                 Intent intent = new Intent(parent.getContext(), Profile.class);
-                String clickedOnPerson = allperson.get(position);
-                intent.putExtra("lookingfor",clickedOnPerson);
-                intent.putExtra("json",input);
+                String clickedOnCity = peopleArray.get(position);
+                intent.putExtra("snails", clickedOnCity);
+                intent.putExtra("json", input);
 
                 startActivity(intent);
             }
+
+
         };
-
         listView.setOnItemClickListener(mMessageClickedHandler);
-
 
         return rootview;
     }
 
-private class JSONParse extends AsyncTask<Void,Void,Void> {
 
+    private class JSONParse extends AsyncTask<Void, Void, Void> {
 
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
 
-    @Override
-    protected Void doInBackground(Void... params) {
+        }
 
+        @Override
+        protected Void doInBackground(Void... arg0) {
             ServiceHandler sh = new ServiceHandler();
 
             // Making a request to url and getting response
@@ -98,17 +105,18 @@ private class JSONParse extends AsyncTask<Void,Void,Void> {
                         JSONObject c = personArray.getJSONObject(i);
                         // Storing  JSON item in a Variable
                         String id = c.getString(ID);
-                        String firsname=c.getString(FIRSTNAME);
-                        String lastname=c.getString(LASTNAME);
-                        String location= c.getString(LOCATION);
-                        String function = c.getString(FUNCTION);
-                        String university = c.getString(UNIVERSITY);
-                        String email = c.getString(EMAIL);
+                        String fName = c.getString(FIRST_NAME);
+                        String lName = c.getString(LAST_NAME);
                         String phone = c.getString(PHONE);
-                        String role= c.getString(ROLE);
-                        String al= c.getString(AL);
-                        Person housing = new Person(id,firsname,lastname,location,function,role,al,email,phone,university);
+                        String function = c.getString(FUNCTION);
+                        String email = c.getString(EMAIL);
+                        String rotation = c.getString(ROTATION);
+                        String local = c.getString(LOCAL);
+                        String assilead = c.getString(ASSILEAD);
+                        String university=c.getString(UNIVERSITY);
+                        Person housing = new Person(id, fName, lName, local, function, rotation, assilead, email, phone,university);
                         input.add(housing);
+
                     }
 
                 } catch (JSONException e) {
@@ -120,19 +128,18 @@ private class JSONParse extends AsyncTask<Void,Void,Void> {
 
             return null;
         }
-    protected void onPostExecute(Void result) {
-        super.onPostExecute(result);
-        int i;
-        for (i = 0; i < input.size(); i++) {
-            Person housing = input.get(i);
-            String lvnames = housing.getFirstName()+" "+housing.getLastName()+" "+housing.getLocation();
 
-            allperson.add(lvnames);
+        @Override
+        protected void onPostExecute(Void result) {
+            super.onPostExecute(result);
+            for (int i = 0; i < input.size(); i++) {
+                Person housing = input.get(i);
+                String lvnames = housing.getFirstName() + " " + housing.getLastName() + " " + housing.getLocation();
+                peopleArray.add(lvnames);
+
             }
+            listView.setAdapter(adapter);
 
-        listView.setAdapter(adapter);
-    }
+        }
     }
 }
-
-

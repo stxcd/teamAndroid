@@ -16,6 +16,7 @@ public class Person implements Comparable<Person>,Serializable {
     public String phone;
     public String email;
 
+
     public String getUniversity() {
         return university;
     }
@@ -112,7 +113,7 @@ public class Person implements Comparable<Person>,Serializable {
 //
 //    }
 
-   public Person(String persId, String firstName, String lastName, String location, String function, String role, String al, String email, String phone,String university) {
+   public Person(String persId, String firstName, String lastName, String location, String function, String role, String al, String email, String phone, String university) {
         this.persId = persId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -123,41 +124,40 @@ public class Person implements Comparable<Person>,Serializable {
         this.email = email;
         this.phone = phone;
        this.university=university;
-
     }
 
 //    public static ArrayList<Person> getPersons() {
 //        ArrayList<Person> people = new ArrayList<Person>();
-//        people.add(new Person("01", "Ramon", "Cadeaux", "Stamford", "IT", "PMO", "Jackie Molina", "ramon.cadeaux@synchronyfinancial.com", "2031234567"));
-//        people.add(new Person("02", "Joanne", "Swanson", "Stamford", "IT", "Mobile Developer", "Dan Murphy", "joanne.swanson@synchronyfinancial.com", "2036449295"));
-//        people.add(new Person("03", "Tyler", "Thisse", "Alpharetta", "Risk", "Risk One", "John Doe", "tyler.thisse@syncfin.com", "1231231111"));
-//        people.add(new Person("04", "Sofia", "Grossman", "Kettering", "Sales", "Sales One", "John Doe", "sofia.grossman@syncfin.com", "1112223333"));
-//        people.add(new Person("01", "Ramon", "Lilly", "Stamford", "IT", "PMO", "Jackie Molina", "ramon.cadeaux@synchronyfinancial.com", "2031234567"));
-//        people.add(new Person("02", "Joanne", "Ronaldo", "Stamford", "IT", "Mobile Developer", "Dan Murphy", "joanne.swanson@synchronyfinancial.com", "2036449295"));
-//        people.add(new Person("03", "Tyler", "Whick", "Alpharetta", "Risk", "Risk One", "John Doe", "tyler.thisse@syncfin.com", "1231231111"));
-//        people.add(new Person("04", "Sofia", "Hudson", "Kettering", "Sales", "Sales One", "John Doe", "sofia.grossman@syncfin.com", "1112223333"));
-//        people.add(new Person("01", "Ramon", "Smith", "Stamford", "IT", "PMO", "Jackie Molina", "ramon.cadeaux@synchronyfinancial.com", "2031234567"));
-//        people.add(new Person("02", "Joanne", "Lechman", "Stamford", "IT", "Mobile Developer", "Dan Murphy", "joanne.swanson@synchronyfinancial.com", "2036449295"));
-//        people.add(new Person("03", "Tyler", "Simmons", "Alpharetta", "Risk", "Risk One", "John Doe", "tyler.thisse@syncfin.com", "1231231111"));
-//        people.add(new Person("04", "Sofia", "O'Neill", "Kettering", "Sales", "Sales One", "John Doe", "sofia.grossman@syncfin.com", "1112223333"));
-//        people.add(new Person("01", "Ramon", "McNally", "Stamford", "IT", "PMO", "Jackie Molina", "ramon.cadeaux@synchronyfinancial.com", "2031234567"));
-//        people.add(new Person("02", "Joanne", "Mulcair", "Stamford", "IT", "Mobile Developer", "Dan Murphy", "joanne.swanson@synchronyfinancial.com", "2036449295"));
-//        people.add(new Person("03", "Tyler", "Keane", "Alpharetta", "Risk", "Risk One", "John Doe", "tyler.thisse@syncfin.com", "1231231111"));
-//        people.add(new Person("04", "Sofia", "Rodriguez", "Kettering", "Sales", "Sales One", "John Doe", "sofia.grossman@syncfin.com", "1112223333"));
-//        people.add(new Person("01", "Ramon", "Cadeaux", "Stamford", "IT", "PMO", "Jackie Molina", "ramon.cadeaux@synchronyfinancial.com", "2031234567"));
-//        people.add(new Person("02", "Joanne", "Swanson", "Stamford", "IT", "Mobile Developer", "Dan Murphy", "joanne.swanson@synchronyfinancial.com", "2036449295"));
-//        people.add(new Person("03", "Tyler", "Thisse", "Alpharetta", "Risk", "Risk One", "John Doe", "tyler.thisse@syncfin.com", "1231231111"));
-//        people.add(new Person("04", "Sofia", "Grossman", "Kettering", "Sales", "Sales One", "John Doe", "sofia.grossman@syncfin.com", "1112223333"));
-//        people.add(new Person("03", "Tyler", "Jackson", "Alpharetta", "Risk", "Risk One", "John Doe", "tyler.thisse@syncfin.com", "1231231111"));
-//        people.add(new Person("04", "Sofia", "Gaudio", "Kettering", "Sales", "Sales One", "John Doe", "sofia.grossman@syncfin.com", "1112223333"));
-//        people.add(new Person("01", "Ramon", "Rankin", "Stamford", "IT", "PMO", "Jackie Molina", "ramon.cadeaux@synchronyfinancial.com", "2031234567"));
-//        people.add(new Person("02", "Joanne", "Maradona", "Stamford", "IT", "Mobile Developer", "Dan Murphy", "joanne.swanson@synchronyfinancial.com", "2036449295"));
-//        people.add(new Person("03", "Tyler", "O'Connel", "Alpharetta", "Risk", "Risk One", "John Doe", "tyler.thisse@syncfin.com", "1231231111"));
-//        people.add(new Person("04", "Sofia", "Herrera", "Kettering", "Sales", "Sales One", "John Doe", "sofia.grossman@syncfin.com", "1112223333"));
-//        people.add(new Person("01", "Ramon", "Martinez", "Stamford", "IT", "PMO", "Jackie Molina", "ramon.cadeaux@synchronyfinancial.com", "2031234567"));
-//        people.add(new Person("02", "Joanne", "Kinvara", "Stamford", "IT", "Mobile Developer", "Dan Murphy", "joanne.swanson@synchronyfinancial.com", "2036449295"));
-//        people.add(new Person("03", "Tyler", "Whitlock", "Alpharetta", "Risk", "Risk One", "John Doe", "tyler.thisse@syncfin.com", "1231231111"));
-//        people.add(new Person("04", "Sofia", "Pena", "Kettering", "Sales", "Sales One", "John Doe", "sofia.grossman@syncfin.com", "1112223333"));
+//        people.add(new Person("01", "Ramon", "Cadeaux", "Stamford", "IT", "PMO", "Jackie Molina", "ramon.cadeaux@synchronyfinancial.com", "2031234567", university));
+//        people.add(new Person("02", "Joanne", "Swanson", "Stamford", "IT", "Mobile Developer", "Dan Murphy", "joanne.swanson@synchronyfinancial.com", "2036449295", university));
+//        people.add(new Person("03", "Tyler", "Thisse", "Alpharetta", "Risk", "Risk One", "John Doe", "tyler.thisse@syncfin.com", "1231231111", university));
+//        people.add(new Person("04", "Sofia", "Grossman", "Kettering", "Sales", "Sales One", "John Doe", "sofia.grossman@syncfin.com", "1112223333", university));
+//        people.add(new Person("01", "Ramon", "Lilly", "Stamford", "IT", "PMO", "Jackie Molina", "ramon.cadeaux@synchronyfinancial.com", "2031234567", university));
+//        people.add(new Person("02", "Joanne", "Ronaldo", "Stamford", "IT", "Mobile Developer", "Dan Murphy", "joanne.swanson@synchronyfinancial.com", "2036449295", university));
+//        people.add(new Person("03", "Tyler", "Whick", "Alpharetta", "Risk", "Risk One", "John Doe", "tyler.thisse@syncfin.com", "1231231111", university));
+//        people.add(new Person("04", "Sofia", "Hudson", "Kettering", "Sales", "Sales One", "John Doe", "sofia.grossman@syncfin.com", "1112223333", university));
+//        people.add(new Person("01", "Ramon", "Smith", "Stamford", "IT", "PMO", "Jackie Molina", "ramon.cadeaux@synchronyfinancial.com", "2031234567", university));
+//        people.add(new Person("02", "Joanne", "Lechman", "Stamford", "IT", "Mobile Developer", "Dan Murphy", "joanne.swanson@synchronyfinancial.com", "2036449295", university));
+//        people.add(new Person("03", "Tyler", "Simmons", "Alpharetta", "Risk", "Risk One", "John Doe", "tyler.thisse@syncfin.com", "1231231111", university));
+//        people.add(new Person("04", "Sofia", "O'Neill", "Kettering", "Sales", "Sales One", "John Doe", "sofia.grossman@syncfin.com", "1112223333", university));
+//        people.add(new Person("01", "Ramon", "McNally", "Stamford", "IT", "PMO", "Jackie Molina", "ramon.cadeaux@synchronyfinancial.com", "2031234567", university));
+//        people.add(new Person("02", "Joanne", "Mulcair", "Stamford", "IT", "Mobile Developer", "Dan Murphy", "joanne.swanson@synchronyfinancial.com", "2036449295", university));
+//        people.add(new Person("03", "Tyler", "Keane", "Alpharetta", "Risk", "Risk One", "John Doe", "tyler.thisse@syncfin.com", "1231231111", university));
+//        people.add(new Person("04", "Sofia", "Rodriguez", "Kettering", "Sales", "Sales One", "John Doe", "sofia.grossman@syncfin.com", "1112223333", university));
+//        people.add(new Person("01", "Ramon", "Cadeaux", "Stamford", "IT", "PMO", "Jackie Molina", "ramon.cadeaux@synchronyfinancial.com", "2031234567", university));
+//        people.add(new Person("02", "Joanne", "Swanson", "Stamford", "IT", "Mobile Developer", "Dan Murphy", "joanne.swanson@synchronyfinancial.com", "2036449295", university));
+//        people.add(new Person("03", "Tyler", "Thisse", "Alpharetta", "Risk", "Risk One", "John Doe", "tyler.thisse@syncfin.com", "1231231111", university));
+//        people.add(new Person("04", "Sofia", "Grossman", "Kettering", "Sales", "Sales One", "John Doe", "sofia.grossman@syncfin.com", "1112223333", university));
+//        people.add(new Person("03", "Tyler", "Jackson", "Alpharetta", "Risk", "Risk One", "John Doe", "tyler.thisse@syncfin.com", "1231231111", university));
+//        people.add(new Person("04", "Sofia", "Gaudio", "Kettering", "Sales", "Sales One", "John Doe", "sofia.grossman@syncfin.com", "1112223333", university));
+//        people.add(new Person("01", "Ramon", "Rankin", "Stamford", "IT", "PMO", "Jackie Molina", "ramon.cadeaux@synchronyfinancial.com", "2031234567", university));
+//        people.add(new Person("02", "Joanne", "Maradona", "Stamford", "IT", "Mobile Developer", "Dan Murphy", "joanne.swanson@synchronyfinancial.com", "2036449295", university));
+//        people.add(new Person("03", "Tyler", "O'Connel", "Alpharetta", "Risk", "Risk One", "John Doe", "tyler.thisse@syncfin.com", "1231231111", university));
+//        people.add(new Person("04", "Sofia", "Herrera", "Kettering", "Sales", "Sales One", "John Doe", "sofia.grossman@syncfin.com", "1112223333", university));
+//        people.add(new Person("01", "Ramon", "Martinez", "Stamford", "IT", "PMO", "Jackie Molina", "ramon.cadeaux@synchronyfinancial.com", "2031234567", university));
+//        people.add(new Person("02", "Joanne", "Kinvara", "Stamford", "IT", "Mobile Developer", "Dan Murphy", "joanne.swanson@synchronyfinancial.com", "2036449295", university));
+//        people.add(new Person("03", "Tyler", "Whitlock", "Alpharetta", "Risk", "Risk One", "John Doe", "tyler.thisse@syncfin.com", "1231231111", university));
+//        people.add(new Person("04", "Sofia", "Pena", "Kettering", "Sales", "Sales One", "John Doe", "sofia.grossman@syncfin.com", "1112223333", university));
 //
 //        Collections.sort(people);
 //

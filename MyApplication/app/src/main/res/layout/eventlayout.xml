@@ -1,0 +1,58 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="69dp"
+    android:padding="6dip">
+
+    <TextView
+        android:id="@+id/firstLine"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignWithParentIfMissing="true"
+        android:gravity="center_vertical"
+        android:text="@string/name"
+        android:textSize="16sp"
+        android:layout_alignParentEnd="true"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/secondLine"
+        android:layout_width="fill_parent"
+        android:layout_height="16dip"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:text="@string/date"
+        android:textSize="12sp"
+        android:layout_below="@+id/firstLine"
+        android:layout_alignParentStart="true"
+        android:longClickable="false" />
+
+    <TextView
+    android:id="@+id/thirdLine"
+    android:layout_width="fill_parent"
+    android:layout_height="16dip"
+    android:ellipsize="marquee"
+    android:singleLine="true"
+    android:text="@string/desc"
+    android:textSize="12sp"
+    android:layout_below="@+id/secondLine"
+    android:layout_alignParentStart="true"
+    android:longClickable="false" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#94969A"
+        android:layout_below="@+id/thirdLine"
+        android:id="@+id/view" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="@string/add"
+        android:id="@+id/buttonOne"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        />
+
+</RelativeLayout>

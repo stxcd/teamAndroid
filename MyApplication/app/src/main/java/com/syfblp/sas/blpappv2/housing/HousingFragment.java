@@ -12,12 +12,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.google.gson.Gson;
 import com.syfblp.sas.blpappv2.R;
 import com.syfblp.sas.blpappv2.ServiceHandler;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -25,29 +22,23 @@ import java.util.ArrayList;
  * Created by 212464350 on 11/24/2015.
  */
 public class HousingFragment extends Fragment {
-    ArrayList<Housing> input = new ArrayList<>();
+    ArrayList<Housing_> input = new ArrayList<>();
     ArrayList<String> alllocation = new ArrayList<>();
 
 
-    private static final String JSON = "directory" ;
-    private static final String ID = "id" ;
-    private static final String FIRSTNAME = "FirstName" ;
-    private static final String LASTNAME = "LastName" ;
-    private static final String TYPE = "Type" ;
-    private static final String APARTMENT_NAME = "apartmentName" ;
-    private static final String ADDRESS1 = "Address 1" ;
-    private static final String CITY = "City" ;
-    private static final String STATE = "State" ;
-    private static final String ZIPCODE = "zipCode" ;
-    private static final String BEDROOMS = "Bedrooms" ;
-    private static final String BATHROOMS = "Bathroom" ;
-    private static final String NUMPEOPLE = "NumPeople" ;
-    private static final String DISTANCE = "Commute" ;
-    private static final String PARKING = "Parking" ;
-    private static final String WORKLOCAL = "SYFLocation" ;
-    private static final String COST="Rent";
-
-    JSONArray houseArray = null;
+//    private static final String JSON = "survey" ;
+//    private static final String ID = "id" ;
+//    private static final String TYPE="type";
+//    private static final String APARTMENT_NAME = "apartmentName" ;
+//    private static final String ADDRESS1 = "address" ;
+//    private static final String CITY = "City" ;
+//    private static final String STATE = "State" ;
+//    private static final String RENT= "rent";
+//    private static final String PARKING="parking";
+//    private static final String DISTANCE = "Commute" ;
+//    private static final String WORKLOCAL = "workLocation" ;
+//    private static final String COST="Monthly";
+//    JSONArray houseArray = null;
     ListView listView;
     ArrayAdapter<String> adapter;
 
@@ -60,7 +51,13 @@ public class HousingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup containter, Bundle savedInstanceState) {
         View rootview = inflater.inflate(R.layout.fragment_housing, containter, false);
         new JSONParse().execute();
-
+//        int i;
+//        final ArrayList<String> alllocation= new ArrayList<>();
+//            for (i = 0; i < input.size(); i++) {
+//                Housing housing = input.get(i);
+//                String lvnames = housing.getWorkLocation();
+//                alllocation.add(lvnames);
+//            }
 
         adapter = new ArrayAdapter<>(rootview.getContext(), android.R.layout.simple_list_item_1, alllocation);
         listView = (ListView) rootview.findViewById(R.id.listView);
@@ -88,6 +85,11 @@ public class HousingFragment extends Fragment {
 
     private class JSONParse extends AsyncTask<Void, Void, Void> {
 
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+        }
 
         @Override
         protected Void doInBackground(Void... arg0) {
@@ -95,62 +97,54 @@ public class HousingFragment extends Fragment {
 
             // Making a request to url and getting response
             String jsonStr = sh.makeServiceCall(url, ServiceHandler.GET);
+            Housing housing = new Gson().fromJson(jsonStr, Housing.class);
+            input=housing.getHousing();
 
+            if(housing== null) {
+                Log.e("Err", "No events found!");
+
+            }
             Log.d("Response: ", "> " + jsonStr);
 
-            if (jsonStr != null) {
-                try {
-                    JSONObject json = new JSONObject(jsonStr);
-
-                    // Getting JSON Array
-                    houseArray = json.getJSONArray(JSON);
-                    for (int i = 0; i < houseArray.length(); i++) {
-                        JSONObject c = houseArray.getJSONObject(i);
-                        // Storing  JSON item in a Variable
-                        String id = c.getString(ID);
-                        String firsname=c.getString(FIRSTNAME);
-                        String lastname=c.getString(LASTNAME);
-                        String type= c.getString(TYPE);
-                        String addressname = c.getString(APARTMENT_NAME);
-                        String address1 = c.getString(ADDRESS1);
-                        String city = c.getString(CITY);
-                        String state = c.getString(STATE);
-                        String zipcode= c.getString(ZIPCODE);
-                        String bedroom= c.getString(BEDROOMS);
-                        String bathroom= c.getString(BATHROOMS);
-                        String numpeople=c.getString(NUMPEOPLE);
-                        String parking= c.getString(PARKING);
-                        String distance = c.getString(DISTANCE);
-                        String work = c.getString(WORKLOCAL);
-                        String cost = c.getString(COST);
-                        Housing housing = new Housing();
-                        housing.setId(Integer.parseInt(id));
-                        housing.setFname(firsname);
-                        housing.setLname(lastname);
-                        housing.setType(type);
-                        housing.setZipCode(zipcode);
-                        housing.setBedroom(bedroom);
-                        housing.setBathroom(bathroom);
-                        housing.setNumpeople(numpeople);
-                        housing.setApartmentName(addressname);
-                        housing.setApartmentAddress1(address1);
-                        housing.setApartmentCity(city);
-                        housing.setApartmentState(state);
-                        housing.setApartmentDistance(distance);
-                        housing.setWorkLocation(work);
-                        housing.setParking(parking);
-                        housing.setApartmentCost(cost);
-                        input.add(housing);
-                        System.out.println(housing.getApartmentAddress1());
-
-                    }
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            } else {
-                Log.e("ServiceHandler", "Couldn't get any data from the url");
-            }
+//            if (jsonStr != null) {
+//                try {
+//                    JSONObject json = new JSONObject(jsonStr);
+//
+//                    // Getting JSON Array
+//                    houseArray = json.getJSONArray(JSON);
+//                    for (int i = 0; i < houseArray.length(); i++) {
+//                        JSONObject c = houseArray.getJSONObject(i);
+//                        // Storing  JSON item in a Variable
+//                        String id = c.getString(ID);
+//                        String addressname = c.getString(APARTMENT_NAME);
+//                        String address1 = c.getString(ADDRESS1);
+//                        String address2 = c.getString(ADDRESS2);
+//                        String city = c.getString(CITY);
+//                        String state = c.getString(STATE);
+//                        String distance = c.getString(DISTANCE);
+//                        String work = c.getString(WORKLOCAL);
+//                        String cost = c.getString(COST);
+//                        Housing housing = new Housing();
+//                        housing.setId(Integer.parseInt(id));
+//                        housing.setApartmentName(addressname);
+//                        housing.setApartmentAddress1(address1);
+//
+//                        housing.setApartmentCity(city);
+//                        housing.setApartmentState(state);
+//                        housing.setApartmentDistance(distance);
+//                        housing.setWorkLocation(work);
+//                        housing.setApartmentCost(cost);
+//                        input.add(housing);
+//                        System.out.println(housing.getApartmentAddress1());
+//
+//                    }
+//
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
+//            } else {
+//                Log.e("ServiceHandler", "Couldn't get any data from the url");
+//            }
 
             return null;
         }
@@ -160,8 +154,8 @@ public class HousingFragment extends Fragment {
             super.onPostExecute(result);
             int i;
             for (i = 0; i < input.size(); i++) {
-                Housing housing = input.get(i);
-                String lvnames = housing.getWorkLocation();
+                Housing_ housing = input.get(i);
+                String lvnames = housing.getSyfLocation();
                 if (checkUnique(lvnames,alllocation)) {
                     alllocation.add(lvnames);
                 }
@@ -174,7 +168,7 @@ public class HousingFragment extends Fragment {
 
     private boolean checkUnique(String lvnames, ArrayList<String> location) {
        boolean unique=true;
-            for (int i=0; 0<location.indexOf(lvnames.trim());i++) {
+            for (int i=0; 0<location.indexOf(lvnames);i++) {
                 if (location.get(i).equals(lvnames)) {
                     unique = false;
                     break;
@@ -182,7 +176,7 @@ public class HousingFragment extends Fragment {
             }
 
             for (int y=location.indexOf(lvnames)+1; y<location.size();y++){
-                if (location.get(y).equals(lvnames.trim())){
+                if (location.get(y).equals(lvnames)){
                     unique=false;
                     break;
                 }
