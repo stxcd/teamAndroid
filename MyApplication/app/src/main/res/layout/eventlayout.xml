@@ -40,7 +40,7 @@
 
     <View
         android:layout_width="fill_parent"
-        android:layout_height=".6dp"
+        android:layout_height="wrap_content"
         android:background="#94969A"
         android:layout_below="@+id/thirdLine"
         android:id="@+id/view" />

@@ -4,19 +4,18 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Events {
     @SerializedName("event")
     @Expose
-    private List<Event> event = new ArrayList<Event>();
+    private ArrayList<Event> event = new ArrayList<Event>();
 
     /**
      *
      * @return
      * The event
      */
-    public List<Event> getEvent() {
+    public ArrayList<Event> getEvent() {
         return event;
     }
 
@@ -25,9 +24,10 @@ public class Events {
      * @param event
      * The event
      */
-    public void setEvent(List<Event> event) {
+    public void setEvent(ArrayList<Event> event) {
         this.event = event;
     }
+
 
 }
 

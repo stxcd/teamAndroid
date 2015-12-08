@@ -1,7 +1,5 @@
 package com.syfblp.sas.blpappv2.events;
 
-import android.content.Intent;
-import android.provider.CalendarContract;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,10 +10,9 @@ import android.widget.TextView;
 import com.syfblp.sas.blpappv2.R;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 
 public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> {
-	private ArrayList<EventHandler> mDataset;
+	private ArrayList<Event> mDataset;
 
 	// Provide a reference to the views for each data item
 	// Complex data items may need more than one view per item, and
@@ -36,19 +33,19 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
             buttonOne = (Button) v.findViewById(R.id.buttonOne);
 	}}
 
-	public void add(int position, EventHandler item) {
+	public void add(int position, Event item) {
         mDataset.add(position, item);
 		notifyItemInserted(position);
 	}
 
-	public void remove(EventHandler item) {
+	public void remove(Event item) {
 		int position = mDataset.indexOf(item);
 		mDataset.remove(position);
 		notifyItemRemoved(position);
 	}
 
 	// Provide a suitable constructor (depends on the kind of dataset)
-	public EventAdapter(ArrayList<EventHandler> myDataset) {
+	public EventAdapter(ArrayList<Event> myDataset) {
 		mDataset = myDataset;
 	}
 
@@ -68,9 +65,9 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
 	public void onBindViewHolder(ViewHolder holder, int position) {
 		// - get element from your dataset at this position
 		// - replace the contents of the view with that element
-		final EventHandler name = mDataset.get(position);
-		holder.txtEvent.setText(name.getEventName());
-        holder.txtDate.setText("Dates: " + name.getStartDate() + " - " + name.getEndDate());
+		final Event name = mDataset.get(position);
+		holder.txtEvent.setText(name.getEvent());
+        holder.txtDate.setText("Dates: " + name.getStartdate() + " - " + name.getEnddate());
         holder.txtDescr.setText("Description: " + name.getDescription());
 //        holder.buttonOne.setOnClickListener(new Button.OnClickListener() {
 //                public void onClick(View v){Calendar beginTime = Calendar.getInstance();
