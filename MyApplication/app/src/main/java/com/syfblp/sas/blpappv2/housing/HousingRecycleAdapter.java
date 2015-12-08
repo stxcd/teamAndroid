@@ -85,9 +85,9 @@ public class HousingRecycleAdapter extends RecyclerView.Adapter<HousingRecycleAd
             }
         else{
             holder.txtApartmentBuilding.setText(name.getApartmentName());}
-        if (name.getApartmentAddress2().equals("Null")){
-            holder.txtSecondLine.setText(name.getApartmentAddress1());}
-                else {holder.txtSecondLine.setText(name.getApartmentAddress1()+ " "+ name.getApartmentAddress2());}
+
+            holder.txtSecondLine.setText(name.getApartmentAddress1());
+
         holder.txtDistance.setText(name.getApartmentDistance());
         holder.txtCityState.setText(name.getApartmentCity() + " ,"+ name.apartmentState);
         holder.txtCost.setText("Monthly: "+name.getApartmentCost());

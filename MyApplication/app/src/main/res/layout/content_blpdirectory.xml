@@ -8,24 +8,12 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="joanne.directory.BLPDirectory"
-    tools:showIn="@layout/activity_blpdirectory">
+>
+
 
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/BLPDirectorylistView"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:id="@+id/BLPDirectorylistView" />
 
-    <LinearLayout
-        android:id="@+id/side_index"
-        android:layout_width="50dp"
-        android:layout_height="fill_parent"
-        android:background="#c3c3c3"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:layout_alignParentRight="true">
-    </LinearLayout>
 </RelativeLayout>
