@@ -15,22 +15,88 @@ public class Housing implements Serializable {
     }
 
     int id;
+
+    public String getFname() {
+        return fname;
+    }
+
+    public void setFname(String fname) {
+        this.fname = fname;
+    }
+
+    public String getLname() {
+        return lname;
+    }
+
+    public void setLname(String lname) {
+        this.lname = lname;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getBedroom() {
+        return bedroom;
+    }
+
+    public void setBedroom(String bedroom) {
+        this.bedroom = bedroom;
+    }
+
+    public String getBathroom() {
+        return bathroom;
+    }
+
+    public void setBathroom(String bathroom) {
+        this.bathroom = bathroom;
+    }
+
+    public String getNumpeople() {
+        return numpeople;
+    }
+
+    public void setNumpeople(String numpeople) {
+        this.numpeople = numpeople;
+    }
+
+    public String getParking() {
+        return parking;
+    }
+
+    public void setParking(String parking) {
+        this.parking = parking;
+    }
+
+    String fname;
+    String lname;
+    String type;
     String apartmentName;
     String apartmentAddress1;
-
-    public String getApartmentAddress2() {
-        return apartmentAddress2;
-    }
-
-    public void setApartmentAddress2(String apartmentAddress2) {
-        this.apartmentAddress2 = apartmentAddress2;
-    }
-
-    String apartmentAddress2;
     String apartmentCity;
     String apartmentState;
+    String zipCode;
+    String bedroom;
+    String bathroom;
+    String numpeople;
     String apartmentCost;
+    String parking;
     String apartmentDistance;
+    String workLocation;
+
+    public String getZipCode() {
+        return zipCode;
+    }
+
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
+    }
+
+
 
     public String getWorkLocation() {
         return workLocation;
@@ -40,7 +106,7 @@ public class Housing implements Serializable {
         this.workLocation = workLocation;
     }
 
-    String workLocation;
+
 
     public String getApartmentName() {
         return apartmentName;
