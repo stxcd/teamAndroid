@@ -88,9 +88,9 @@ public class HousingRecycleAdapter extends RecyclerView.Adapter<HousingRecycleAd
 
             holder.txtSecondLine.setText(name.getApartmentAddress1());
         holder.txtDistance.setText(name.getApartmentDistance());
-        holder.txtCityState.setText(name.getApartmentCity() + " ,"+ name.apartmentState+", "+ name.getZipCode());
-        holder.txtCost.setText("Monthly: "+name.getApartmentCost());
-
+        holder.txtCityState.setText(name.getApartmentCity() + ", "+ name.apartmentState+" "+ name.getZipCode());
+        holder.txtCost.setText("Rent: $"+name.getApartmentCost()+"/mo");
+        //Rent: $497/mo
 
     }
 

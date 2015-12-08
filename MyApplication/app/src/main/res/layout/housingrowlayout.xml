@@ -44,19 +44,18 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingRight="25dp"
         android:paddingTop="2dp"
         android:text="Distance"
         android:textSize="16sp"
         android:textColor="#3B3C43"
         android:id="@+id/distance"
         android:layout_alignTop="@+id/secondLine"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:gravity="right" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingRight="25dp"
         android:text="$1000+"
         android:textSize="16sp"
         android:textColor="#3B3C43"
@@ -76,8 +75,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/ratingBar"
+        android:numStars="5"
+        android:stepSize="0.1"
+        android:rating="3.7"
         android:layout_above="@+id/distance"
-        android:layout_alignEnd="@+id/firstLine" />
+        android:layout_alignEnd="@+id/firstLine"
+        android:layout_alignParentTop="true" />
 
 
 </RelativeLayout>
