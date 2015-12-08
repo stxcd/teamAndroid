@@ -63,8 +63,8 @@ public class DirectoryFragment extends Fragment {
 
 
                 Intent intent = new Intent(parent.getContext(), Profile.class);
-                String clickedOnCity = peopleArray.get(position);
-                intent.putExtra("snails", clickedOnCity);
+                String clickedOnPerson = peopleArray.get(position);
+                intent.putExtra("snails", clickedOnPerson);
                 intent.putExtra("json", input);
 
                 startActivity(intent);

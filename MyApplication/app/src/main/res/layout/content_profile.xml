@@ -64,7 +64,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/alLbl"
         android:id="@+id/txtALLbl"
-        android:layout_below="@+id/txtRoleLbl"
+        android:layout_below="@+id/txtRole"
         android:layout_alignParentStart="true"
         android:layout_marginTop="40dp" />
 

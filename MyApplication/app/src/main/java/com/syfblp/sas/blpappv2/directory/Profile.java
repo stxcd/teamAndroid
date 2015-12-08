@@ -44,7 +44,7 @@ public class Profile extends AppCompatActivity {
         TextView emailTxt = (TextView) findViewById(R.id.txtEmail);
         emailTxt.setText(person.getEmail());
 
-        TextView uniTxt= (TextView) findViewById(R.id.unitxt);
+        TextView uniTxt= (TextView) findViewById(R.id.txtUniv);
         uniTxt.setText(person.getUniversity());
 
     }

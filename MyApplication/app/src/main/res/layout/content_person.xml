@@ -16,10 +16,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Location"
         android:id="@+id/blpLocation"
         android:layout_toRightOf="@+id/blpName"
         android:layout_alignBottom="@+id/blpName"
-        android:paddingLeft="15dp"/>
+        android:paddingLeft="15dp"
+        android:textColor="#94969a"
+        android:textSize="8sp"/>
 </RelativeLayout>
