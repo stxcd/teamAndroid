@@ -3,8 +3,10 @@ package com.syfblp.sas.blpappv2.housing;
         import com.google.gson.annotations.Expose;
         import com.google.gson.annotations.SerializedName;
 
+        import java.io.Serializable;
 
-public class Housing_ {
+
+public class Housing_ implements Serializable {
 
     @SerializedName("id")
     @Expose
