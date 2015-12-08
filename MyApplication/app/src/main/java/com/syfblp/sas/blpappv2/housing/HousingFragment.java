@@ -123,7 +123,7 @@ public class HousingFragment extends Fragment {
                         housing.setId(Integer.parseInt(id));
                         housing.setApartmentName(addressname);
                         housing.setApartmentAddress1(address1);
-                        housing.setApartmentAddress2(address2);
+
                         housing.setApartmentCity(city);
                         housing.setApartmentState(state);
                         housing.setApartmentDistance(distance);

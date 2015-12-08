@@ -6,6 +6,17 @@ import java.io.Serializable;
  * Created by 212464350 on 12/2/2015.
  */
 public class Housing implements Serializable {
+    int id;
+    String apartmentType;
+    String apartmentName;
+    String apartmentAddress1;
+    String apartmentCity;
+    String apartmentState;
+    String apartmentCost;
+    String apartmentDistance;
+    String workLocation;
+
+
     public int getId() {
         return id;
     }
@@ -14,23 +25,10 @@ public class Housing implements Serializable {
         this.id = id;
     }
 
-    int id;
-    String apartmentName;
-    String apartmentAddress1;
 
-    public String getApartmentAddress2() {
-        return apartmentAddress2;
-    }
 
-    public void setApartmentAddress2(String apartmentAddress2) {
-        this.apartmentAddress2 = apartmentAddress2;
-    }
 
-    String apartmentAddress2;
-    String apartmentCity;
-    String apartmentState;
-    String apartmentCost;
-    String apartmentDistance;
+
 
     public String getWorkLocation() {
         return workLocation;
@@ -40,7 +38,7 @@ public class Housing implements Serializable {
         this.workLocation = workLocation;
     }
 
-    String workLocation;
+
 
     public String getApartmentName() {
         return apartmentName;
