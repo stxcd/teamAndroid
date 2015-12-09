@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-import com.syfblp.sas.blpappv2.R;
+import com.syfblp.sas.testfortab.R;
 
 import java.util.ArrayList;
 

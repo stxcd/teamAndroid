@@ -9,6 +9,9 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import com.syfblp.sas.testfortab.directory.*;
+import com.syfblp.sas.testfortab.function.FunctionFilter;
+import com.syfblp.sas.testfortab.location.LocationFilter;
 
 /**
  * Created by 212464350 on 12/9/2015.
@@ -51,7 +54,7 @@ public class TabsFragment extends Fragment {
         public android.support.v4.app.Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    return NameFilter.newInstance();
+                    return DirectoryFragment.newInstance();
                 case 1:
                     return LocationFilter.newInstance();
                 case 2:

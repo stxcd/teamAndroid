@@ -1,32 +1,26 @@
-package com.syfblp.sas.testfortab.directory;
+package com.syfblp.sas.testfortab.function;
 
-import android.support.v4.app.Fragment;
-import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.syfblp.sas.testfortab.R;
 import com.syfblp.sas.testfortab.ServiceHandler;
+import com.syfblp.sas.testfortab.directory.Person;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
- * Created by 212464350 on 11/24/2015.
+ * Created by 212464350 on 11/4/2015.
  */
-public class DirectoryFragment extends Fragment {
-    ArrayList<Person> input = new ArrayList<>();
-    ArrayList<String> peopleArray = new ArrayList<>();
+public class FunctionSelector implements android.widget.AdapterView.OnItemSelectedListener {
     private static final String JSON = "directory" ;
     private static final String FIRST_NAME = "firstName" ;
     private static final String ID = "id" ;
@@ -38,45 +32,23 @@ public class DirectoryFragment extends Fragment {
     private static final String LOCAL = "location" ;
     private static final String ASSILEAD = "al" ;
     private static final String UNIVERSITY="university";
-    JSONArray personArray = null;
-    ListView listView;
-    ArrayAdapter<String> adapter;
     private static String url = "https://uat.onlinecreditcenter6.com/cs/groups/cmswebsite/documents/websiteasset/directory_android.json" ;
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
+        ListView listView=(ListView) parent.getRootView().findViewById(R.id.listView);
+        String check= parent.getItemAtPosition(position).toString();
+        if(check.equals("list 1")){
 
-    public static DirectoryFragment newInstance() {
-        DirectoryFragment fragment = new DirectoryFragment();
-        return fragment;
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(parent.getContext(), android.R.layout.simple_list_item_1, peopleArray);
+            listView.setAdapter(adapter);
+        }
     }
 
-    public View onCreateView(LayoutInflater inflater, ViewGroup containter, Bundle savedInstanceState) {
-        final View rootview = inflater.inflate(R.layout.content_blpdirectory, containter, false);
-        new JSONParse().execute();
-
-        adapter = new ArrayAdapter<>(rootview.getContext(), android.R.layout.simple_list_item_1, peopleArray);
-        listView = (ListView) rootview.findViewById(R.id.BLPDirectorylistView);
-
-
-
-        android.widget.AdapterView.OnItemClickListener mMessageClickedHandler = new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView parent, View v, int position, long id) {
-
-
-                Intent intent = new Intent(parent.getContext(), Profile.class);
-                String clickedOnCity = peopleArray.get(position);
-                intent.putExtra("snails", clickedOnCity);
-                intent.putExtra("json", input);
-
-                startActivity(intent);
-            }
-
-
-        };
-        listView.setOnItemClickListener(mMessageClickedHandler);
-
-        return rootview;
+    @Override
+    public void onNothingSelected(AdapterView<?> arg0) {
+        // TODO Auto-generated method stub
     }
-
 
     private class JSONParse extends AsyncTask<Void, Void, Void> {
 
@@ -129,17 +101,5 @@ public class DirectoryFragment extends Fragment {
             return null;
         }
 
-        @Override
-        protected void onPostExecute(Void result) {
-            super.onPostExecute(result);
-            for (int i = 0; i < input.size(); i++) {
-                Person housing = input.get(i);
-                String lvnames = housing.getFirstName() + " " + housing.getLastName() + "- " + housing.getLocation();
-                peopleArray.add(lvnames);
 
-            }
-            listView.setAdapter(adapter);
-
-        }
     }
-}
