@@ -3,6 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="95dp"
     android:padding="6dip"
+    android:fontFamily="sans-serif"
     >
 
     <TextView
@@ -15,8 +16,9 @@
         android:gravity="center_vertical"
         android:text="Apt Name"
         android:textSize="18sp"
-        android:textColor="#3B3C43"
-        android:fontFamily="sans-serif"/>
+        android:textColor="#3b3b45"
+        android:fontFamily="sans-serif-medium"
+        />
 
     <TextView
         android:id="@+id/secondLine"
@@ -25,10 +27,10 @@
         android:paddingTop="2dp"
         android:singleLine="true"
         android:text="Address"
-        android:textSize="14sp"
+        android:textSize="13sp"
         android:textColor="#94969a"
         android:layout_below="@+id/firstLine"
-        android:fontFamily="sans-serif"/>
+        android:fontFamily="sans-serif-condensed"/>
 
     <TextView
         android:id="@+id/thirdLine"
@@ -36,11 +38,11 @@
         android:layout_height="wrap_content"
         android:paddingTop="2dp"
         android:text="City, ST"
-        android:textSize="14sp"
+        android:textSize="13sp"
         android:textColor="#94969a"
         android:layout_alignTop="@+id/secondLine"
         android:layout_toEndOf="@+id/secondLine"
-        android:fontFamily="sans-serif"/>
+        android:fontFamily="sans-serif-condensed"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -48,7 +50,7 @@
         android:paddingTop="2dp"
         android:text="Distance"
         android:textSize="14sp"
-        android:textColor="#3B3C43"
+        android:textColor="#3b3b45"
         android:id="@+id/distance"
         android:gravity="right"
         android:layout_below="@+id/secondLine"
@@ -59,8 +61,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="$1000+"
-        android:textSize="12sp"
-        android:textColor="#3B3C43"
+        android:textSize="14sp"
+        android:textColor="#3b3b45"
         android:id="@+id/cost"
         android:layout_centerVertical="true"
         android:layout_alignEnd="@+id/firstLine"
