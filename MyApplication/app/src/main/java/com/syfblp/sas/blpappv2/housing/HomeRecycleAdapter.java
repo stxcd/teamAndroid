@@ -47,7 +47,7 @@ public class HomeRecycleAdapter extends RecyclerView.Adapter<HomeRecycleAdapter.
 
     // Create new views (invoked by the layout manager)
     @Override
-    public HomeRecycleAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
+    public ViewHolder onCreateViewHolder(ViewGroup parent,
                                                    int viewType) {
         // create a new view
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.home_rowlayout, parent, false);
