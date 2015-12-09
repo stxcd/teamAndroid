@@ -2,9 +2,12 @@ package com.syfblp.sas.testfortab.directory;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -33,9 +36,6 @@ public class Profile extends AppCompatActivity {
 
         final Person person = getPeople(input);
 
-        CircleImageView profImg = (CircleImageView) findViewById(R.id.profile_image);
-        profImg.;
-        //profImg.setImageResource(img);
         getProfImg();
 
         TextView firstLastNameTxt = (TextView) findViewById(R.id.txtFirstLastName);
@@ -81,30 +81,35 @@ public class Profile extends AppCompatActivity {
         return toBeReturned;
     }
 
-    private void getProfImg() {
-
-        //for (int i = 0; i < input.size(); i++) {
-        //Person check = (Person) input.get(i);
-            String mDrawableName = person.getLastName().toLowerCase() + ".jpg";
-            //int img = this.getResources().getIdentifier(mDrawableName, "drawable", this.getPackageName());
-            //return img;
-
+    /*private void getProfImg() {
+            final Person person = getPeople(input);
+            String mDrawableName = person.getLastName().toLowerCase();
             CircleImageView profImage = (CircleImageView) findViewById(R.id.profile_image);
-            Context context = profImage.getContext();
-            int id = context.getResources().getIdentifier(mDrawableName, "drawable", context.getPackageName());
+            int id = getResources().getIdentifier(mDrawableName, "drawable", getPackageName());
             profImage.setImageResource(id);
+        } */
 
-            /*
-            int resID = getResources().getIdentifier(resourceName, "id", getPackageName());
+    private void getProfImg() {
+        final Person person = getPeople(input);
+        CircleImageView profImage = (CircleImageView) findViewById(R.id.profile_image);
+        String lastNm = person.getLastName();
 
-            ImageView im = (ImageView) findViewById(resID);
-            Context context = im.getContext();
-            int id = context.getResources().getIdentifier(resourceName, "drawable",
-                    context.getPackageName());
-            im.setImageResource(id); */
+        int id = 0;
+        id = getResources().getIdentifier(lastNm.toLowerCase(), "drawable", Profile.this.getPackageName());
+
+        if(id == 0) {
+            profImage.setVisibility(View.GONE);
+            return;
+        }
+
+        try {
+            profImage.setImageDrawable(getResources().getDrawable(id));
+        } catch(Exception ex) {
+            Log.e("", "Resource not found!");
         }
     }
 }
+
 
 
 
