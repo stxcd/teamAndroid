@@ -3,6 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="95dp"
     android:padding="6dip"
+    android:fontFamily="sans-serif"
     >
 
     <TextView
@@ -15,63 +16,68 @@
         android:gravity="center_vertical"
         android:text="Apt Name"
         android:textSize="18sp"
-        android:textColor="#94969A"/>
+        android:textColor="#3b3b45"
+        android:fontFamily="sans-serif-medium"
+        />
 
     <TextView
         android:id="@+id/secondLine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingLeft="10dp"
         android:paddingTop="2dp"
         android:singleLine="true"
         android:text="Address"
-        android:textSize="16sp"
-        android:textColor="#3B3C43"
-        android:layout_below="@+id/firstLine" />
+        android:textSize="13sp"
+        android:textColor="#94969a"
+        android:layout_below="@+id/firstLine"
+        android:fontFamily="sans-serif-condensed"/>
 
     <TextView
         android:id="@+id/thirdLine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingLeft="10dp"
-        android:paddingBottom="10dp"
+        android:paddingTop="2dp"
         android:text="City, ST"
-        android:layout_alignParentStart="true"
-        android:textSize="16sp"
-        android:textColor="#3B3C43"
-        android:layout_below="@+id/secondLine"/>
+        android:textSize="13sp"
+        android:textColor="#94969a"
+        android:layout_alignTop="@+id/secondLine"
+        android:layout_toEndOf="@+id/secondLine"
+        android:fontFamily="sans-serif-condensed"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingRight="25dp"
         android:paddingTop="2dp"
         android:text="Distance"
-        android:textSize="16sp"
-        android:textColor="#3B3C43"
+        android:textSize="14sp"
+        android:textColor="#3b3b45"
         android:id="@+id/distance"
-        android:layout_alignTop="@+id/secondLine"
-        android:layout_alignParentEnd="true" />
+        android:gravity="right"
+        android:layout_below="@+id/secondLine"
+        android:layout_alignParentStart="true"
+        android:fontFamily="sans-serif"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingRight="25dp"
         android:text="$1000+"
-        android:textSize="16sp"
-        android:textColor="#3B3C43"
+        android:textSize="14sp"
+        android:textColor="#3b3b45"
         android:id="@+id/cost"
-        android:layout_below="@+id/distance"
-        android:layout_alignStart="@+id/distance" />
+        android:layout_centerVertical="true"
+        android:layout_alignEnd="@+id/firstLine"
+        android:fontFamily="sans-serif"/>
 
-
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:background="#94969A"
-        android:layout_below="@+id/thirdLine"
-        />
-
+    <RatingBar style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ratingBar"
+        android:numStars="5"
+        android:stepSize="0.1"
+        android:rating="4.2"
+        android:layout_alignBottom="@+id/firstLine"
+        android:layout_alignEnd="@+id/firstLine"
+        android:fontFamily="sans-serif"/>
 
 
 </RelativeLayout>

@@ -14,6 +14,7 @@ import android.widget.ListView;
 
 import com.syfblp.sas.blpappv2.R;
 import com.syfblp.sas.blpappv2.ServiceHandler;
+import com.syfblp.sas.blpappv2.housing.HousingFragment;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -40,7 +41,7 @@ public class DirectoryFragment extends Fragment {
     private static final String UNIVERSITY="university";
     JSONArray personArray = null;
     ListView listView;
-    DirectoryAdapter adapter;
+    ArrayAdapter<String> adapter;
     private static String url = "https://uat.onlinecreditcenter6.com/cs/groups/cmswebsite/documents/websiteasset/directory_android.json" ;
 
 
@@ -53,7 +54,7 @@ public class DirectoryFragment extends Fragment {
         final View rootview = inflater.inflate(R.layout.content_blpdirectory, containter, false);
         new JSONParse().execute();
 
-        adapter = new DirectoryAdapter(input, getActivity());
+        adapter = new ArrayAdapter<>(rootview.getContext(), android.R.layout.simple_list_item_1, peopleArray);
         listView = (ListView) rootview.findViewById(R.id.BLPDirectorylistView);
 
 
@@ -62,9 +63,9 @@ public class DirectoryFragment extends Fragment {
             public void onItemClick(AdapterView parent, View v, int position, long id) {
 
 
-                Intent intent = new Intent(parent.getContext(), Profile.class);
-                String clickedOnPerson = peopleArray.get(position);
-                intent.putExtra("snails", clickedOnPerson);
+                Intent intent = new Intent(parent.getContext(), HousingFragment.Profile.class);
+                String clickedOnCity = peopleArray.get(position);
+                intent.putExtra("snails", clickedOnCity);
                 intent.putExtra("json", input);
 
                 startActivity(intent);
@@ -134,7 +135,7 @@ public class DirectoryFragment extends Fragment {
             super.onPostExecute(result);
             for (int i = 0; i < input.size(); i++) {
                 Person housing = input.get(i);
-                String lvnames = housing.getFirstName() + " " + housing.getLastName() + " " + housing.getLocation();
+                String lvnames = housing.getFirstName() + " " + housing.getLastName() + "- " + housing.getLocation();
                 peopleArray.add(lvnames);
 
             }

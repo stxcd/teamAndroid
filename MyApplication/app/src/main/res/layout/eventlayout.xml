@@ -4,7 +4,8 @@
     style="@style/Card"
     android:layout_marginTop="8dp"
     android:background="#fff"
-    app:cardBackgroundColor="#fff">
+    app:cardBackgroundColor="#fff"
+    android:fontFamily="sans-serif">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -45,7 +46,8 @@
             android:textSize="12sp"
             android:layout_below="@+id/secondLine"
             android:layout_alignParentStart="true"
-            android:longClickable="false" />
+            android:longClickable="false"
+            android:fontFamily="sans-serif"/>
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -59,7 +61,8 @@
             android:background="#6EBF4A"
             android:padding="8dp"
             android:layout_marginTop="16dp"
-            android:textColor="#fff"/>
+            android:textColor="#fff"
+            android:fontFamily="sans-serif"/>
 
     </LinearLayout>
 

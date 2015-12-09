@@ -1,4 +1,4 @@
-package com.syfblp.sas.blpappv2.directory;
+package com.syfblp.sas.testfortab.directory;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-import com.syfblp.sas.blpappv2.R;
+import com.syfblp.sas.testfortab.R;
 
 import java.util.ArrayList;
 
@@ -73,7 +73,7 @@ public class Profile extends AppCompatActivity {
         Person toBeReturned = null;
         for (int i = 0; i < input.size(); i++) {
             Person check = (Person) input.get(i);
-            String check1 = check.getFirstName() + " " + check.getLastName() + " " + check.getLocation();
+            String check1 = check.getFirstName() + " " + check.getLastName() + "- " + check.getLocation();
             if (check1.equals(nameToDisplay)) {
                 toBeReturned = check;
             }

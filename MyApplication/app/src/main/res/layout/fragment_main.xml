@@ -9,13 +9,15 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Check Out What&apos;s new with Synchrony"
-        android:id="@+id/textView2" />
+        android:text="Check Out What&apos;s New with Synchrony Financial"
+        android:id="@+id/textView2"
+        android:fontFamily="sans-serif"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/my_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="vertical" />
+        android:scrollbars="vertical"
+        android:fontFamily="sans-serif"/>
 
 </LinearLayout>
