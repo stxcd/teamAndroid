@@ -14,6 +14,7 @@ import android.widget.ListView;
 
 import com.syfblp.sas.blpappv2.R;
 import com.syfblp.sas.blpappv2.ServiceHandler;
+import com.syfblp.sas.blpappv2.housing.HousingFragment;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -62,7 +63,7 @@ public class DirectoryFragment extends Fragment {
             public void onItemClick(AdapterView parent, View v, int position, long id) {
 
 
-                Intent intent = new Intent(parent.getContext(), Profile.class);
+                Intent intent = new Intent(parent.getContext(), HousingFragment.Profile.class);
                 String clickedOnCity = peopleArray.get(position);
                 intent.putExtra("snails", clickedOnCity);
                 intent.putExtra("json", input);

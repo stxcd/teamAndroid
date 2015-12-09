@@ -42,7 +42,8 @@
             android:textColor="?colorAccent"
             android:textColorHint="#fff"
             android:layout_gravity="center"
-            android:layout_margin="32dp"/>
+            android:layout_margin="32dp"
+            android:fontFamily="sans-serif"/>
 
         <Button
             android:layout_width="match_parent"
@@ -54,7 +55,8 @@
             android:textStyle="bold"
             android:background="?colorAccent"
             android:layout_gravity="center"
-            android:layout_margin="32dp"/>
+            android:layout_margin="32dp"
+            android:fontFamily="sans-serif"/>
 
     </LinearLayout>
 

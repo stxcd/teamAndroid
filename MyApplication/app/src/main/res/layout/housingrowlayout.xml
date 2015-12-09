@@ -15,7 +15,8 @@
         android:gravity="center_vertical"
         android:text="Apt Name"
         android:textSize="18sp"
-        android:textColor="#3B3C43"/>
+        android:textColor="#3B3C43"
+        android:fontFamily="sans-serif"/>
 
     <TextView
         android:id="@+id/secondLine"
@@ -26,7 +27,8 @@
         android:text="Address"
         android:textSize="14sp"
         android:textColor="#94969a"
-        android:layout_below="@+id/firstLine" />
+        android:layout_below="@+id/firstLine"
+        android:fontFamily="sans-serif"/>
 
     <TextView
         android:id="@+id/thirdLine"
@@ -37,7 +39,8 @@
         android:textSize="14sp"
         android:textColor="#94969a"
         android:layout_alignTop="@+id/secondLine"
-        android:layout_toEndOf="@+id/secondLine" />
+        android:layout_toEndOf="@+id/secondLine"
+        android:fontFamily="sans-serif"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -49,7 +52,8 @@
         android:id="@+id/distance"
         android:gravity="right"
         android:layout_below="@+id/secondLine"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:fontFamily="sans-serif"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -59,7 +63,8 @@
         android:textColor="#3B3C43"
         android:id="@+id/cost"
         android:layout_centerVertical="true"
-        android:layout_alignEnd="@+id/firstLine" />
+        android:layout_alignEnd="@+id/firstLine"
+        android:fontFamily="sans-serif"/>
 
     <RatingBar style="?android:attr/ratingBarStyleSmall"
         android:layout_width="wrap_content"
@@ -69,7 +74,8 @@
         android:stepSize="0.1"
         android:rating="4.2"
         android:layout_alignBottom="@+id/firstLine"
-        android:layout_alignEnd="@+id/firstLine" />
+        android:layout_alignEnd="@+id/firstLine"
+        android:fontFamily="sans-serif"/>
 
 
 </RelativeLayout>

@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="@dimen/nav_header_height"
+    android:layout_width="match_parent" android:layout_height="120dp"
     android:background="?colorPrimary"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:theme="@style/ThemeOverlay.AppCompat.Dark" android:orientation="vertical"
-    android:gravity="bottom">
+    android:gravity="bottom"
+    android:fontFamily="sans-serif">
 
     <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:src="@drawable/ic_syfi_logo" android:id="@+id/imageView" />
-
-    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:paddingTop="@dimen/nav_header_vertical_spacing" android:text="Synchrony Financial "
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:paddingTop="10dp"
+        android:src="@drawable/sf_logo_small" android:id="@+id/imageView" />
 
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:text="Engage With Us" android:id="@+id/textView"
-        android:textColor="#FFFFFFFF"/>
+        android:text="BLP Engage" android:id="@+id/textView"
+        android:textColor="#FFFFFFFF"
+        android:fontFamily="sans-serif"/>
 
 </LinearLayout>
