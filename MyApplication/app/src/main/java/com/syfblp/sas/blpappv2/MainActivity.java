@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity
 
         FragmentManager fragmentManager=getFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.content_frame,new AnnouncementsFragment()).commit();
-        setTitle("Annoucements");
+        setTitle("Announcements");
 
 
 
