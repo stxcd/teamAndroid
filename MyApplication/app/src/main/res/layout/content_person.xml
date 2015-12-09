@@ -11,7 +11,8 @@
         android:text="Name"
         android:id="@+id/blpName"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="#3B3C43"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -21,5 +22,6 @@
         android:id="@+id/blpLocation"
         android:layout_toRightOf="@+id/blpName"
         android:layout_alignBottom="@+id/blpName"
-        android:paddingLeft="15dp"/>
+        android:paddingLeft="15dp"
+        android:textColor="#94969a"/>
 </RelativeLayout>
