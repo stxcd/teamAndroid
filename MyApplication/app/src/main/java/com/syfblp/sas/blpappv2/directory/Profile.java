@@ -1,8 +1,10 @@
 package com.syfblp.sas.blpappv2.directory;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.TextView;
 
 import com.syfblp.sas.blpappv2.R;
@@ -25,7 +27,7 @@ public class Profile extends AppCompatActivity {
         nameToDisplay = (String) incomingIntent.getStringExtra("snails");
         input = (ArrayList<Person>) incomingIntent.getSerializableExtra("json");
 
-        Person person = getPeople(input);
+        final Person person = getPeople(input);
         TextView firstLastNameTxt = (TextView) findViewById(R.id.txtFirstLastName);
         firstLastNameTxt.setText(person.getFirstName() + " " + person.getLastName());
 
@@ -47,6 +49,14 @@ public class Profile extends AppCompatActivity {
         TextView uniTxt= (TextView) findViewById(R.id.unitxt);
         uniTxt.setText(person.getUniversity());
 
+        View buttonView = findViewById(R.id.btnCall);
+        buttonView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + person.getPhone()));
+                startActivity(intent);
+            }
+        });
     }
 
     private Person getPeople(ArrayList<Person> input) {
