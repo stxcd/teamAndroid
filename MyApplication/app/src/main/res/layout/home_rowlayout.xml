@@ -11,7 +11,8 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:layout_height="?android:attr/listPreferredItemHeightLarge"
-        android:padding="6dip" >
+        android:padding="6dip"
+        android:fontFamily="sans-serif">
 
         <ImageView
             android:id="@+id/icon"
@@ -34,7 +35,8 @@
             android:layout_toRightOf="@id/icon"
             android:gravity="center_vertical"
             android:text="Description"
-            android:textSize="13sp" />
+            android:textSize="13sp"
+            android:fontFamily="sans-serif"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -44,7 +46,8 @@
             android:id="@+id/secondLine"
             android:textSize="10sp"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"/>
+            android:layout_alignParentEnd="true"
+            android:fontFamily="sans-serif"/>
 
     </RelativeLayout>
 

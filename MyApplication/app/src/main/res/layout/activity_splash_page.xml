@@ -19,6 +19,7 @@
         android:textColor="#454545"
         android:gravity="center_horizontal"
         android:layout_alignParentBottom="true"
-        android:text="SYF BLP's" />
+        android:text="SYF Business Leadership Program"
+        android:fontFamily="sans-serif"/>
 
 </RelativeLayout>
