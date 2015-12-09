@@ -34,4 +34,13 @@
         <item name="cardBackgroundColor">@color/background_floating_material_light</item>
     </style>
 
+    <style name="FloatingActionButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">16dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_gravity">end|bottom</item>
+        <item name="android:src">@android:drawable/ic_menu_share</item>
+    </style>
+
 </resources>

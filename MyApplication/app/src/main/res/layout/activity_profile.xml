@@ -107,4 +107,11 @@
         android:layout_alignParentStart="true"/>
 
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btnCall"
+        style="@style/FloatingActionButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/ic_phone"/>
+
 </RelativeLayout>
