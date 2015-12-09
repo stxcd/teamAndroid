@@ -1,23 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fontFamily="sans-serif">
 
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Announcements" />
+            android:icon="@drawable/a_news"
+            android:title="Announcements"
+            android:fontFamily="sans-serif"
+            />
         <item
             android:id="@+id/nav_directory"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="BLP Directory" />
+            android:icon="@drawable/a_directory"
+            android:title="Directory"
+            android:fontFamily="sans-serif"
+            />
         <item
             android:id="@+id/nav_event"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="SYF Events" />
+            android:icon="@drawable/a_calendar"
+            android:title="Events"
+            android:fontFamily="sans-serif"
+            />
         <item
             android:id="@+id/nav_housing"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Housing Ratings" />
+            android:icon="@drawable/a_house_no_circle"
+            android:title="Housing Reviews"
+            android:fontFamily="sans-serif"
+            />
     </group>
 
 
