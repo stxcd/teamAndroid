@@ -1,5 +1,6 @@
 package com.syfblp.sas.testfortab.directory;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -10,6 +11,8 @@ import android.widget.TextView;
 import com.syfblp.sas.testfortab.R;
 
 import java.util.ArrayList;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 
 public class Profile extends AppCompatActivity {
@@ -23,11 +26,18 @@ public class Profile extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
 
+
         Intent incomingIntent = this.getIntent();
         nameToDisplay = (String) incomingIntent.getStringExtra("snails");
         input = (ArrayList<Person>) incomingIntent.getSerializableExtra("json");
 
         final Person person = getPeople(input);
+
+        CircleImageView profImg = (CircleImageView) findViewById(R.id.profile_image);
+        profImg.;
+        //profImg.setImageResource(img);
+        getProfImg();
+
         TextView firstLastNameTxt = (TextView) findViewById(R.id.txtFirstLastName);
         firstLastNameTxt.setText(person.getFirstName() + " " + person.getLastName());
 
@@ -46,7 +56,7 @@ public class Profile extends AppCompatActivity {
         TextView emailTxt = (TextView) findViewById(R.id.txtEmail);
         emailTxt.setText(person.getEmail());
 
-        TextView uniTxt= (TextView) findViewById(R.id.unitxt);
+        TextView uniTxt = (TextView) findViewById(R.id.txtUniv);
         uniTxt.setText(person.getUniversity());
 
         View buttonView = findViewById(R.id.btnCall);
@@ -60,15 +70,39 @@ public class Profile extends AppCompatActivity {
     }
 
     private Person getPeople(ArrayList<Person> input) {
-        Person toBeReturned= null;
+        Person toBeReturned = null;
         for (int i = 0; i < input.size(); i++) {
             Person check = (Person) input.get(i);
             String check1 = check.getFirstName() + " " + check.getLastName() + "- " + check.getLocation();
             if (check1.equals(nameToDisplay)) {
-                toBeReturned=check;
+                toBeReturned = check;
             }
         }
         return toBeReturned;
+    }
+
+    private void getProfImg() {
+
+        //for (int i = 0; i < input.size(); i++) {
+        //Person check = (Person) input.get(i);
+            String mDrawableName = person.getLastName().toLowerCase() + ".jpg";
+            //int img = this.getResources().getIdentifier(mDrawableName, "drawable", this.getPackageName());
+            //return img;
+
+            CircleImageView profImage = (CircleImageView) findViewById(R.id.profile_image);
+            Context context = profImage.getContext();
+            int id = context.getResources().getIdentifier(mDrawableName, "drawable", context.getPackageName());
+            profImage.setImageResource(id);
+
+            /*
+            int resID = getResources().getIdentifier(resourceName, "id", getPackageName());
+
+            ImageView im = (ImageView) findViewById(resID);
+            Context context = im.getContext();
+            int id = context.getResources().getIdentifier(resourceName, "drawable",
+                    context.getPackageName());
+            im.setImageResource(id); */
+        }
     }
 }
 

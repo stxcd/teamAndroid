@@ -8,19 +8,29 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:fontFamily="sans-serif"
 >
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile_image"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:src="@drawable/nader"
+        app:civ_border_width="1dp"
+        app:civ_border_color="#94969A"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/FirstLastName"
         android:id="@+id/txtFirstLastName"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/profile_image"
+        android:layout_marginTop="5dp"
         android:layout_centerHorizontal="true"
         android:editable="false"
-        android:textSize="@dimen/abc_text_size_headline_material"
-        android:fontFamily="sans-serif"/>
+        android:textSize="@dimen/abc_text_size_headline_material" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -29,8 +39,7 @@
         android:text="@string/FunctionLocation"
         android:id="@+id/txtFunctionLocation"
         android:layout_below="@+id/txtFirstLastName"
-        android:layout_centerHorizontal="true"
-        android:fontFamily="sans-serif"/>
+        android:layout_centerHorizontal="true"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -40,11 +49,7 @@
         android:id="@+id/txtRoleLbl"
         android:layout_below="@+id/txtFunctionLocation"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="50dp"
-        android:fontFamily="sans-serif"
-        android:textStyle="bold"
-        android:textSize="17sp"
-        />
+        android:layout_marginTop="50dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -53,9 +58,17 @@
         android:text="@string/role"
         android:id="@+id/txtRole"
         android:layout_below="@+id/txtRoleLbl"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/alLbl"
+        android:id="@+id/txtALLbl"
+        android:layout_below="@+id/txtRole"
         android:layout_alignParentStart="true"
-        android:fontFamily="sans-serif"
-        android:textSize="14sp"/>
+        android:layout_marginTop="43dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -65,34 +78,26 @@
         android:id="@+id/txtAL"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/txtALLbl"
-        android:layout_alignParentLeft="true"
-        android:fontFamily="sans-serif"
-        android:textSize="14sp"/>
+        android:layout_alignParentLeft="true"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="@string/alLbl"
-        android:id="@+id/txtALLbl"
-        android:layout_below="@+id/txtRoleLbl"
-        android:layout_alignParentStart="true"
+        android:text="University"
+        android:id="@+id/txtUnivLbl"
+        android:layout_below="@+id/txtAL"
         android:layout_marginTop="43dp"
-        android:fontFamily="sans-serif"
-        android:textStyle="bold"
-        android:textSize="17sp"/>
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/phone"
-        android:id="@+id/txtPhone"
-        android:layout_below="@+id/txtALLbl"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="58dp"
-        android:fontFamily="sans-serif"
-        android:textSize="14sp"/>
+        android:text="BLP's University"
+        android:id="@+id/txtUniv"
+        android:layout_below="@+id/txtUnivLbl"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -100,34 +105,19 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="@string/email"
         android:id="@+id/txtEmail"
-        android:layout_below="@+id/txtPhone"
-        android:layout_alignParentStart="true"
-        android:fontFamily="sans-serif"
-        android:textSize="14sp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Alma Mata"
-        android:id="@+id/textView4"
-        android:layout_marginTop="44dp"
-        android:layout_below="@+id/txtEmail"
-        android:layout_alignParentStart="true"
-        android:fontFamily="sans-serif"
-        android:textStyle="bold"
-        android:textSize="17sp"/>
+        android:layout_below="@+id/txtUniv"
+        android:layout_marginTop="43dp"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
-        android:id="@+id/unitxt"
-        android:layout_below="@+id/textView4"
-        android:layout_alignParentStart="true"
-        android:fontFamily="sans-serif"
-        android:textSize="14sp"/>
+        android:text="@string/phone"
+        android:id="@+id/txtPhone"
+        android:layout_below="@+id/txtEmail"
+        android:layout_alignParentStart="true"/>
+
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/btnCall"

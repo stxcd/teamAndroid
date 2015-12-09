@@ -12,7 +12,7 @@
         android:id="@+id/blpName"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:fontFamily="sans-serif"/>
+        android:textColor="#3B3C43"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -23,5 +23,5 @@
         android:layout_toRightOf="@+id/blpName"
         android:layout_alignBottom="@+id/blpName"
         android:paddingLeft="15dp"
-        android:fontFamily="sans-serif"/>
+        android:textColor="#94969a"/>
 </RelativeLayout>
