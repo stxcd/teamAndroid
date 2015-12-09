@@ -40,7 +40,7 @@ public class DirectoryFragment extends Fragment {
     private static final String UNIVERSITY="university";
     JSONArray personArray = null;
     ListView listView;
-    ArrayAdapter<String> adapter;
+    DirectoryAdapter adapter;
     private static String url = "https://uat.onlinecreditcenter6.com/cs/groups/cmswebsite/documents/websiteasset/directory_android.json" ;
 
 
@@ -53,7 +53,7 @@ public class DirectoryFragment extends Fragment {
         final View rootview = inflater.inflate(R.layout.content_blpdirectory, containter, false);
         new JSONParse().execute();
 
-        adapter = new ArrayAdapter<>(rootview.getContext(), android.R.layout.simple_list_item_1, peopleArray);
+        adapter = new DirectoryAdapter(input, getActivity());
         listView = (ListView) rootview.findViewById(R.id.BLPDirectorylistView);
 
 

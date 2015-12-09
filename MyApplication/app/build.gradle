@@ -28,4 +28,5 @@ dependencies {
     compile 'com.android.support:cardview-v7:22.2.1'
     compile 'com.google.android.gms:play-services-appindexing:8.1.0'
     compile files('libs/android-support-v7-recyclerview.jar')
+    compile 'de.hdodenhof:circleimageview:2.0.0'
 }

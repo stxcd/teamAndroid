@@ -10,12 +10,24 @@
     android:paddingTop="@dimen/activity_vertical_margin"
 >
 
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile_image"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:src="@drawable/nader"
+        app:civ_border_width="1dp"
+        app:civ_border_color="#94969A"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/FirstLastName"
         android:id="@+id/txtFirstLastName"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/profile_image"
+        android:layout_marginTop="5dp"
         android:layout_centerHorizontal="true"
         android:editable="false"
         android:textSize="@dimen/abc_text_size_headline_material" />
